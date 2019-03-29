@@ -1,4 +1,4 @@
-import React from 'React'
+import React,{Component} from 'React'
 import PropTypes from 'prop-types'
 import {
   View,
@@ -19,51 +19,129 @@ import Images from '../../resources/index'
 
 const { width } = Dimensions.get('window')
  
-const Wcard = props => {
-  const {
-    type,
-    containerStyle,
-    userStyle,
-    imgStyle,
-    imgUrl,
-    rightStyle,
-    textStyle,
-    textTitle,
-    clickFunc,
-    trightStyle,
-    textStyleone,
-    textStyletwo,
-    textStylethree,
-    textContentone,
-    textContenttwo,
-    textContentthree,
-    tips
-  } = props
+class Wcard extends Component{
 
-  return(
-    <View>
-      {
-        type?
-          type===1?
-          <TouchableHighlight
-            underlayColor={'#FFF'}
-            activeOpacity={1}
-            onPress={()=>{
-              clickFunc()
-            }}>  
-            <View
-              style={
-                [
-                  styles.containerStyle,
-                  basicLayout.both,
-                  containerStyle
-                ]
-                }>
+  static PropTypes = {
+    type: PropTypes.number,
+    containerStyle: PropTypes.object,
+    userStyle: PropTypes.object,
+    imgStyle: PropTypes.object,
+    imgUrl: PropTypes.string,
+    rightStyle: PropTypes.object,
+    textStyle: PropTypes.object,
+    textTitle: PropTypes.string || PropTypes.number,
+    clickFunc: PropTypes.func,
+    trightStyle: PropTypes.object,
+    textStyleone: PropTypes.object,
+    textStyletwo: PropTypes.object,
+    textStylethree: PropTypes.object,
+    textContentone: PropTypes.string || PropTypes.number,
+    textContenttwo: PropTypes.string || PropTypes.number,
+    textContentthree: PropTypes.string || PropTypes.number
+  }
+  
+  static defaultProps = {
+    type: 1,
+    imgUrl: 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1836527358,3378076438&fm=85&s=ED22747ECFA2F7744EB687830200E08D',
+    textTitle: 'Title of an article',
+    clickFunc: ()=>{Alert.alert('Functions executed after clicking')},
+    textContentone: 'Millennium Dubai Airport Hotel ',
+    textContenttwo: 'Dubai – Subway Access',
+    textContentthree: '$75 p/night',
+    tips: 'Please check if it is used correctly'
+  }
+  render(){
+    const {
+      type,
+      containerStyle,
+      userStyle,
+      imgStyle,
+      imgUrl,
+      rightStyle,
+      textStyle,
+      textTitle,
+      clickFunc,
+      trightStyle,
+      textStyleone,
+      textStyletwo,
+      textStylethree,
+      textContentone,
+      textContenttwo,
+      textContentthree,
+      tips
+    } = this.props
+    return(
+      <View>
+        {
+          type?
+            type===1?
+            <TouchableHighlight
+              underlayColor={'#FFF'}
+              activeOpacity={1}
+              onPress={()=>{
+                clickFunc()
+              }}>  
               <View
                 style={
                   [
-                    styles.userStyle,
-                    userStyle
+                    styles.containerStyle,
+                    basicLayout.both,
+                    containerStyle
+                  ]
+                  }>
+                <View
+                  style={
+                    [
+                      styles.userStyle,
+                      userStyle
+                    ]
+                  }>
+                  <Image
+                    resizeMode='cover'
+                    style={
+                      [
+                        styles.imgStyle,
+                        imgStyle
+                      ]
+                    }
+                    source={{uri:imgUrl}}
+                  />
+                </View>
+                <Text
+                  numberOfLines={2}
+                  style={
+                    [
+                      styles.textStyle,
+                      textStyle
+                    ]
+                  }>
+                  {textTitle}
+                </Text>
+                <Image
+                  resizeMode='cover'
+                  style={
+                    [
+                      styles.rightStyle,
+                      rightStyle
+                    ]
+                  }
+                  source={Images.right}
+                />
+              </View>
+            </TouchableHighlight>
+            :
+            <TouchableHighlight
+              underlayColor={'#FFF'}
+              activeOpacity={1}
+              onPress={()=>{
+                clickFunc()
+              }}>
+              <View
+                style={
+                  [
+                    styles.containerStyle,
+                    basicLayout.left,
+                    containerStyle
                   ]
                 }>
                 <Image
@@ -76,102 +154,55 @@ const Wcard = props => {
                   }
                   source={{uri:imgUrl}}
                 />
+                <View
+                  style={
+                    [
+                      styles.trightStyle,
+                      basicLayout.leftnr,
+                      trightStyle
+                    ]
+                  }>
+                  <Text
+                    numberOfLines={1}
+                    style={
+                      [
+                        styles.textStyleone,
+                        textStyleone
+                      ]
+                    }>
+                  {textContentone}
+                  </Text>
+                  <Text
+                    numberOfLines={1}
+                    style={
+                      [
+                        styles.textStyletwo,
+                        textStyletwo
+                      ]
+                    }>
+                    {textContenttwo}
+                  </Text>
+                  <Text
+                    numberOfLines={1}
+                    style={
+                      [
+                        styles.textStylethree,
+                        textStylethree
+                      ]
+                    }>
+                    {textContentthree}
+                  </Text>
+                </View>
               </View>
-              <Text
-                numberOfLines={2}
-                style={
-                  [
-                    styles.textStyle,
-                    textStyle
-                  ]
-                }>
-                {textTitle}
-              </Text>
-              <Image
-                resizeMode='cover'
-                style={
-                  [
-                    styles.rightStyle,
-                    rightStyle
-                  ]
-                }
-                source={Images.right}
-              />
-            </View>
-          </TouchableHighlight>
+            </TouchableHighlight>
           :
-          <TouchableHighlight
-            underlayColor={'#FFF'}
-            activeOpacity={1}
-            onPress={()=>{
-              clickFunc()
-            }}>
-            <View
-              style={
-                [
-                  styles.containerStyle,
-                  basicLayout.left,
-                  containerStyle
-                ]
-              }>
-              <Image
-                resizeMode='cover'
-                style={
-                  [
-                    styles.imgStyle,
-                    imgStyle
-                  ]
-                }
-                source={{uri:imgUrl}}
-              />
-              <View
-                style={
-                  [
-                    styles.trightStyle,
-                    basicLayout.leftnr,
-                    trightStyle
-                  ]
-                }>
-                <Text
-                  numberOfLines={1}
-                  style={
-                    [
-                      styles.textStyleone,
-                      textStyleone
-                    ]
-                  }>
-                {textContentone}
-                </Text>
-                <Text
-                  numberOfLines={1}
-                  style={
-                    [
-                      styles.textStyletwo,
-                      textStyletwo
-                    ]
-                  }>
-                  {textContenttwo}
-                </Text>
-                <Text
-                  numberOfLines={1}
-                  style={
-                    [
-                      styles.textStylethree,
-                      textStylethree
-                    ]
-                  }>
-                  {textContentthree}
-                </Text>
-              </View>
-            </View>
-          </TouchableHighlight>
-        :
-        <View>
-          <Text>{tips}</Text>
-        </View>
-      }
-    </View>
-  )
+          <View>
+            <Text>{tips}</Text>
+          </View>
+        }
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -228,35 +259,5 @@ const styles = StyleSheet.create({
     letterSpacing: 1
   }
 })
-
-Wcard.PropTypes = {
-  type: PropTypes.number,
-  containerStyle: PropTypes.object,
-  userStyle: PropTypes.object,
-  imgStyle: PropTypes.object,
-  imgUrl: PropTypes.string,
-  rightStyle: PropTypes.object,
-  textStyle: PropTypes.object,
-  textTitle: PropTypes.string || PropTypes.number,
-  clickFunc: PropTypes.func,
-  trightStyle: PropTypes.object,
-  textStyleone: PropTypes.object,
-  textStyletwo: PropTypes.object,
-  textStylethree: PropTypes.object,
-  textContentone: PropTypes.string || PropTypes.number,
-  textContenttwo: PropTypes.string || PropTypes.number,
-  textContentthree: PropTypes.string || PropTypes.number
-}
-
-Wcard.defaultProps = {
-  type: 1,
-  imgUrl: 'https://ss0.baidu.com/73F1bjeh1BF3odCf/it/u=1836527358,3378076438&fm=85&s=ED22747ECFA2F7744EB687830200E08D',
-  textTitle: 'Title of an article',
-  clickFunc: ()=>{Alert.alert('Functions executed after clicking')},
-  textContentone: 'Millennium Dubai Airport Hotel ',
-  textContenttwo: 'Dubai – Subway Access',
-  textContentthree: '$75 p/night',
-  tips: 'Please check if it is used correctly'
-}
 
 export default Wcard
