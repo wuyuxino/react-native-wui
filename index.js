@@ -1,8 +1,14 @@
 // main js
 import {
-  Wcard
+  Wcard,
+  Wheader,
+  Wtitle,
+  Wtab
 } from './src/components/index'
 
 export {
-  Wcard
+  Wcard,
+  Wheader,
+  Wtitle,
+  Wtab
 }

@@ -13,6 +13,16 @@ const layout = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start'
+  },
+  rightnr:{
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  },
+  center:{
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 }
 

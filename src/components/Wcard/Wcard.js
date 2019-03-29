@@ -1,4 +1,4 @@
-import React,{Component} from 'React'
+import React from 'React'
 import PropTypes from 'prop-types'
 import {
   View,
