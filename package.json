@@ -1,6 +1,6 @@
 {
   "name": "react-native-wui",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "Some common components",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,8 @@
     "url": "git+https://github.com/wuyuxino/react-native-ui.git"
   },
   "keywords": [
-    "react-native-ui"
+    "react-native-ui",
+    "react-native-wui"
   ],
   "author": "wuyx",
   "license": "ISC",
