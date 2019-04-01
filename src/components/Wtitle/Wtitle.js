@@ -1,4 +1,4 @@
-import React,{Component} from 'React'
+import React from 'React'
 import PropTypes from 'prop-types'
 import {
   View,
@@ -15,108 +15,88 @@ import {
 } from '../config/index'
 import Images from '../../resources/index'
 
-class Wtitle extends Component{
+const Wtitle = props => {
+  const {
+    containerStyle,
+    leftStyle,
+    rightStyle,
+    textStyle,
+    titleContent,
+    rightTextStyle,
+    rightTextContent,
+    rightContent,
+    clickRight
+  } = props
 
-  static PropTypes = {
-    containerStyle: PropTypes.object,
-    leftStyle: PropTypes.object,
-    rightStyle: PropTypes.object,
-    textStyle: PropTypes.object,
-    titleContent: PropTypes.string || PropTypes.number,
-    rightTextStyle: PropTypes.object,
-    rightTextContent: PropTypes.string || PropTypes.number,
-    rightContent: PropTypes.func,
-    clickRight: PropTypes.func
-  }
-  
-  static defaultProps = {
-    titleContent: 'Title Component',
-    rightTextContent: 'more',
-    clickRight: ()=>{Alert.alert('click right')}
-  }
-
-  render(){
-    const {
-      containerStyle,
-      leftStyle,
-      rightStyle,
-      textStyle,
-      titleContent,
-      rightTextStyle,
-      rightTextContent,
-      rightContent,
-      clickRight
-    } = props
-    return(
+  return(
+    <View
+      style={
+        [
+          styles.containerStyle,
+          basicLayout.both,
+          containerStyle
+        ]
+      }>
       <View
         style={
           [
-            styles.containerStyle,
-            basicLayout.both,
-            containerStyle
+            styles.leftStyle,
+            basicLayout.leftnr,
+            leftStyle
+          ]
+        }>
+        <Text
+          numberOfLines={1}
+          style={
+            [
+              styles.textStyle,
+              textStyle
+            ]
+          }>
+          {titleContent}
+        </Text>
+      </View>
+      <TouchableHighlight
+        onPress={()=>{
+          clickRight()
+        }}
+        underlayColor={'#FFF'}
+        style={
+          [
+            styles.rightStyle,
+            basicLayout.rightnr,
+            rightStyle
           ]
         }>
         <View
           style={
             [
-              styles.leftStyle,
-              basicLayout.leftnr,
-              leftStyle
+              basicLayout.rightnr
             ]
           }>
           <Text
-            numberOfLines={1}
             style={
               [
-                styles.textStyle,
-                textStyle
+                styles.rightTextStyle,
+                rightTextStyle
               ]
             }>
-            {titleContent}
+            {rightTextContent}
           </Text>
+          {
+            rightContent?
+            rightContent()
+            :
+            <Image
+              resizeMode='cover'
+              style={styles.img}
+              source={Images.right}
+            />
+          }
         </View>
-        <TouchableHighlight
-          onPress={()=>{
-            clickRight()
-          }}
-          underlayColor={'#FFF'}
-          style={
-            [
-              styles.rightStyle,
-              basicLayout.rightnr,
-              rightStyle
-            ]
-          }>
-          <View
-            style={
-              [
-                basicLayout.rightnr
-              ]
-            }>
-            <Text
-              style={
-                [
-                  styles.rightTextStyle,
-                  rightTextStyle
-                ]
-              }>
-              {rightTextContent}
-            </Text>
-            {
-              rightContent?
-              rightContent()
-              :
-              <Image
-                resizeMode='cover'
-                style={styles.img}
-                source={Images.right}
-              />
-            }
-          </View>
-        </TouchableHighlight>
-      </View>
-    )
-  }
+      </TouchableHighlight>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -149,5 +129,23 @@ const styles = StyleSheet.create({
     marginLeft: 6
   }
 })
+
+Wtitle.PropTypes = {
+  containerStyle: PropTypes.object,
+  leftStyle: PropTypes.object,
+  rightStyle: PropTypes.object,
+  textStyle: PropTypes.object,
+  titleContent: PropTypes.string || PropTypes.number,
+  rightTextStyle: PropTypes.object,
+  rightTextContent: PropTypes.string || PropTypes.number,
+  rightContent: PropTypes.func,
+  clickRight: PropTypes.func
+}
+
+Wtitle.defaultProps = {
+  titleContent: 'Title Component',
+  rightTextContent: 'more',
+  clickRight: ()=>{Alert.alert('click right')}
+}
 
 export default Wtitle

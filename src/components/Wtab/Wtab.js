@@ -80,7 +80,7 @@ class Wtab extends Component{
                     style={
                       [
                         {
-                          width:`${100/tabList.length}%`
+                          width: `${100/tabList.length}%`
                         },
                         styles.itemStyle,
                         basicLayout.center,
@@ -96,11 +96,12 @@ class Wtab extends Component{
               style={
                 [
                   {
-                    width:`${100/tabList.length}%`,
-                    left:sliderLeft,
-                    height:2,
-                    position:'absolute',
-                    bottom:0
+                    width: `${100/tabList.length}%`,
+                    left: sliderLeft,
+                    height: 2,
+                    position: 'absolute',
+                    bottom: 0,
+                    backgroundColor: '#4486FF'
                   },
                   sliderStyle
                 ]

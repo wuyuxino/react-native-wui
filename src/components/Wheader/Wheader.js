@@ -1,4 +1,4 @@
-import React,{Component} from 'React'
+import React from 'React'
 import PropTypes from 'prop-types'
 import {
   View,
@@ -15,105 +15,85 @@ import {
 } from '../config/index'
 import Images from '../../resources/index'
 
-class Wheader extends Component{
+const Wheader = props => {
+  const {
+    containerStyle,
+    leftStyle,
+    rightStyle,
+    textStyle,
+    textContent,
+    leftContent,
+    leftClick,
+    rightContent,
+    rightClick
+  } = props
 
-  static PropTypes = {
-    containerStyle: PropTypes.object,
-    leftStyle: PropTypes.object,
-    rightStyle: PropTypes.object,
-    textStyle: PropTypes.string || PropTypes.number,
-    textContent: PropTypes.string || PropTypes.number,
-    leftContent: PropTypes.func,
-    leftClick: PropTypes.func,
-    rightContent:PropTypes.func,
-    rightClick: PropTypes.func
-  }
-  
-  static defaultProps = {
-    textContent: 'Module components',
-    leftClick: ()=>{Alert.alert('left click')},
-    rightClick: ()=>{Alert.alert('right click')}
-  }
-
-  render(){
-    const {
-      containerStyle,
-      leftStyle,
-      rightStyle,
-      textStyle,
-      textContent,
-      leftContent,
-      leftClick,
-      rightContent,
-      rightClick
-    } = props
-    return(
-      <View
-        style={
-          [
-            styles.containerStyle,
-            basicLayout.both,
-            containerStyle
-          ]
-        }>
-        <TouchableHighlight
-          underlayColor='#fff'
-          onPress={()=>{
-            leftClick()
-          }}>
-          <View
-            style={
-              [
-                styles.leftStyle,
-                basicLayout.center,
-                leftStyle
-              ]
-            }>
-            {
-              leftContent?
-              leftContent():
-              <Image
-                resizeMode='cover'
-                style={styles.img}
-                source={Images.left}
-              />
-            }
-          </View>
-        </TouchableHighlight>
-        <Text
+  return(
+    <View
+      style={
+        [
+          styles.containerStyle,
+          basicLayout.both,
+          containerStyle
+        ]
+      }>
+      <TouchableHighlight
+        underlayColor='#fff'
+        onPress={()=>{
+          leftClick()
+        }}>
+        <View
           style={
             [
-              styles.textStyle,
-              textStyle
+              styles.leftStyle,
+              basicLayout.center,
+              leftStyle
             ]
-          }>{textContent}</Text>
-        <TouchableHighlight
-          underlayColor='#fff'
-          onPress={()=>{
-            rightClick()
-          }}>
-          <View
-            style={
-              [
-                styles.rightStyle,
-                basicLayout.center,
-                rightStyle
-              ]
-            }>
-            {
-              rightContent?
-              rightContent():
-              <Image
-                resizeMode='cover'
-                style={styles.img}
-                source={Images.share}
-              />  
-            }
-          </View>
-        </TouchableHighlight>
-      </View>
-    )
-  }
+          }>
+          {
+            leftContent?
+            leftContent():
+            <Image
+              resizeMode='cover'
+              style={styles.img}
+              source={Images.left}
+            />
+          }
+        </View>
+      </TouchableHighlight>
+      <Text
+        style={
+          [
+            styles.textStyle,
+            textStyle
+          ]
+        }>{textContent}</Text>
+      <TouchableHighlight
+        underlayColor='#fff'
+        onPress={()=>{
+          rightClick()
+        }}>
+        <View
+          style={
+            [
+              styles.rightStyle,
+              basicLayout.center,
+              rightStyle
+            ]
+          }>
+          {
+            rightContent?
+            rightContent():
+            <Image
+              resizeMode='cover'
+              style={styles.img}
+              source={Images.share}
+            />  
+          }
+        </View>
+      </TouchableHighlight>
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -142,5 +122,23 @@ const styles = StyleSheet.create({
   }
 
 })
+
+Wheader.PropTypes = {
+  containerStyle: PropTypes.object,
+  leftStyle: PropTypes.object,
+  rightStyle: PropTypes.object,
+  textStyle: PropTypes.string || PropTypes.number,
+  textContent: PropTypes.string || PropTypes.number,
+  leftContent: PropTypes.func,
+  leftClick: PropTypes.func,
+  rightContent:PropTypes.func,
+  rightClick: PropTypes.func
+}
+
+Wheader.defaultProps = {
+  textContent: 'Module components',
+  leftClick: ()=>{Alert.alert('left click')},
+  rightClick: ()=>{Alert.alert('right click')}
+}
 
 export default Wheader
