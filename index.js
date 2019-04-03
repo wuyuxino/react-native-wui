@@ -7,7 +7,8 @@ import {
   Wlogin,
   Wregister,
   Warticle,
-  Wcomment
+  Wcomment,
+  Wloading
 } from './src/components/index'
 
 export {
@@ -18,5 +19,6 @@ export {
   Wlogin,
   Wregister,
   Warticle,
-  Wcomment
+  Wcomment,
+  Wloading
 }

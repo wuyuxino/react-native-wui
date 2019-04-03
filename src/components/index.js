@@ -7,6 +7,7 @@ import Wlogin from './Wlogin/Wlogin'
 import Wregister from './Wregister/Wregister'
 import Warticle from './Warticle/Warticle'
 import Wcomment from './Wcomment/Wcomment'
+import Wloading from './Wloading/Wloading'
 
 export {
   Wcard,
@@ -16,5 +17,6 @@ export {
   Wlogin,
   Wregister,
   Warticle,
-  Wcomment
+  Wcomment,
+  Wloading
 }
