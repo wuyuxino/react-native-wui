@@ -8,7 +8,8 @@ import {
   Wregister,
   Warticle,
   Wcomment,
-  Wloading
+  Wloading,
+  Wtips
 } from './src/components/index'
 
 export {
@@ -20,5 +21,6 @@ export {
   Wregister,
   Warticle,
   Wcomment,
-  Wloading
+  Wloading,
+  Wtips
 }
