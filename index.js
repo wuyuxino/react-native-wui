@@ -5,7 +5,9 @@ import {
   Wtitle,
   Wtab,
   Wlogin,
-  Wregister
+  Wregister,
+  Warticle,
+  Wcomment
 } from './src/components/index'
 
 export {
@@ -14,5 +16,7 @@ export {
   Wtitle,
   Wtab,
   Wlogin,
-  Wregister
+  Wregister,
+  Warticle,
+  Wcomment
 }

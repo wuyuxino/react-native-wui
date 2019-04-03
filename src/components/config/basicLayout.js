@@ -23,6 +23,12 @@ const layout = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  imgcon:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    flexWrap: 'wrap'
   }
 }
 

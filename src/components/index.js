@@ -5,6 +5,8 @@ import Wtitle from './Wtitle/Wtitle'
 import Wtab from './Wtab/Wtab'
 import Wlogin from './Wlogin/Wlogin'
 import Wregister from './Wregister/Wregister'
+import Warticle from './Warticle/Warticle'
+import Wcomment from './Wcomment/Wcomment'
 
 export {
   Wcard,
@@ -12,5 +14,7 @@ export {
   Wtitle,
   Wtab,
   Wlogin,
-  Wregister
+  Wregister,
+  Warticle,
+  Wcomment
 }
