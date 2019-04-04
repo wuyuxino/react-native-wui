@@ -54,7 +54,6 @@ class Wtips extends Component {
       }
       this.defaultProps.hide = obj
       this.defaultProps.tipsText = 'tips'
-      console.log('xiaoshi')
     },time?time:1500)
     func()
   }

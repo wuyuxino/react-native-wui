@@ -12,3 +12,6 @@ npm install prop-types --save
 ```html
 http://111.230.57.206:10010/note/wui
 ```
+### 图列
+
+![avatar](./src/resources/images/like.png)
