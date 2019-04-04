@@ -15,7 +15,7 @@ http://111.230.57.206:10010/note/wui
 ### 样式展示
 
 #### 文章页
-![avatar](./src/demoimg/warticle.png)
+![avatar](./src/resources/demoimg/warticle.png)
 
 ``` html
 import { Warticle } from 'react-native-wui'
@@ -25,7 +25,7 @@ import { Warticle } from 'react-native-wui'
 ```
 
 #### 评论页
-![avatar](./src/demoimg/wcomment.png)
+![avatar](./src/resources/demoimg/wcomment.png)
 
 ``` html
 import { Wcomment } from 'react-native-wui'
@@ -35,7 +35,7 @@ import { Wcomment } from 'react-native-wui'
 ```
 
 #### 加载中组件
-![avatar](./src/demoimg/wloading.png)
+![avatar](./src/resources/demoimg/wloading.png)
 
 ``` html
 import { Wloading } from 'react-native-wui'
@@ -45,7 +45,7 @@ import { Wloading } from 'react-native-wui'
 ```
 
 #### 登陆界面
-![avatar](./src/demoimg/wlogin.png)
+![avatar](./src/resources/demoimg/wlogin.png)
 
 ``` html
 import { Wlogin } from 'react-native-wui'
@@ -55,7 +55,7 @@ import { Wlogin } from 'react-native-wui'
 ```
 
 #### 注册界面
-![avatar](./src/demoimg/wregister.png)
+![avatar](./src/resources/demoimg/wregister.png)
 
 ``` html
 import { Wregister } from 'react-native-wui'
@@ -65,7 +65,7 @@ import { Wregister } from 'react-native-wui'
 ```
 
 #### tab切换
-![avatar](./src/demoimg/wtab.png)
+![avatar](./src/resources/demoimg/wtab.png)
 
 ``` html
 import { Wtab } from 'react-native-wui'
