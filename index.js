@@ -1,4 +1,5 @@
 // main js
+// components
 import {
   Wcard,
   Wheader,
@@ -9,10 +10,22 @@ import {
   Warticle,
   Wcomment,
   Wloading,
-  Wtips
+  Wtips,
+
+  
 } from './src/components/index'
+// methods
+import {
+  isIphoneX,
+  getStatusBarHeight,
+  scaleSizeH,
+  scaleSizeW,
+  fontscale,
+  setSpText
+} from './src/methods/index'
 
 export {
+  // components
   Wcard,
   Wheader,
   Wtitle,
@@ -22,5 +35,14 @@ export {
   Warticle,
   Wcomment,
   Wloading,
-  Wtips
+  Wtips,
+
+  // methods
+  isIphoneX,
+  getStatusBarHeight,
+  scaleSizeH,
+  scaleSizeW,
+  fontscale,
+  setSpText
+
 }
