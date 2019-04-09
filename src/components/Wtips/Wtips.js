@@ -109,7 +109,7 @@ class Wtips extends Component {
 
 const styles = StyleSheet.create({
   containerStyle:{
-    flex:1,
+    flex: 1,
     width,
     height,
     position: 'absolute',

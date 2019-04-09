@@ -10,6 +10,8 @@ import Wcomment from './Wcomment/Wcomment'
 import Wloading from './Wloading/Wloading'
 import Wtips from './Wtips/Wtips'
 import WtimeSelect from './WtimeSelect/WtimeSelect'
+import Wcategory from './Wcategory/Wcategory'
+import Wswitch from './Wswitch/Wswitch'
 
 export {
   Wcard,
@@ -22,5 +24,8 @@ export {
   Wcomment,
   Wloading,
   Wtips,
-  WtimeSelect
+  WtimeSelect,
+  Wcategory,
+  Wswitch
+
 }

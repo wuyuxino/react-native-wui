@@ -3,12 +3,9 @@ import PropTypes from 'prop-types'
 import {
   View,
   Text,
-  Alert,
-  Animated,
   ScrollView,
   Dimensions,
-  StyleSheet,
-  TouchableHighlight
+  StyleSheet
 } from 'react-native'
 
 import {
@@ -21,7 +18,7 @@ class WtimeSelect extends Component{
   constructor(props){
     super(props)
     this.state={
-      currentTime:0
+      currentTime: 0
     }
   }
 
@@ -56,7 +53,6 @@ class WtimeSelect extends Component{
     textNoChoiceColor: '#ccc',
     pointerChoiceColor: '#000',
     pointerNoChoiceColor: '#ccc'
-
   }
 
   render(){
@@ -98,7 +94,7 @@ class WtimeSelect extends Component{
             this.setState({
               currentTime:num
             },()=>{
-              currentTimeFun(timeData[Math.floor(num)])
+              currentTimeFun(timeData[num])
             })
           }}
           showsHorizontalScrollIndicator={false}
@@ -110,10 +106,13 @@ class WtimeSelect extends Component{
                   style={
                     [
                       styles.itemStyle,
+                      basicLayout.center,
                       itemStyle,
                       {
                         marginLeft:index===0?width/2:0,
-                        marginRight:index===timeData.length-1?width/2-width/(equipartition*2):0,
+                        marginRight:index===timeData.length-1?
+                        width/2-width/(equipartition*2):
+                        0,
                         width:width/equipartition
                       }
                     ]
@@ -123,7 +122,9 @@ class WtimeSelect extends Component{
                       [
                         styles.timeTextStyle,
                         {
-                          color:currentTime===index?textChoiceColor:textNoChoiceColor
+                          color:currentTime===index?
+                          textChoiceColor:
+                          textNoChoiceColor
                         },
                         timeTextStyle
                       ]
@@ -133,7 +134,9 @@ class WtimeSelect extends Component{
                       [
                         styles.bottomPointerStyle,
                         {
-                          backgroundColor:currentTime===index?pointerChoiceColor:pointerNoChoiceColor
+                          backgroundColor:currentTime===index?
+                          pointerChoiceColor:
+                          pointerNoChoiceColor
                         },
                         bottomPointerStyle,
                       ]
@@ -156,28 +159,26 @@ const styles = StyleSheet.create({
     backgroundColor: '#F2F2F2'
   },  
   pointerStyle:{
-    width:2,
-    height:10,
-    position:'absolute',
-    backgroundColor:'red',
-    left:width/2-1
+    width: 2,
+    height: 10,
+    position: 'absolute',
+    backgroundColor: 'red',
+    left: width/2-1
   },
   itemStyle:{
-    height:100,
-    position:'relative',
-    justifyContent:'center',
-    alignItems:'center',
-    borderBottomColor:'#ccc',
-    borderBottomWidth:2
+    height: 100,
+    position: 'relative',
+    borderBottomColor: '#ccc',
+    borderBottomWidth: 2
   },
   timeTextStyle:{
-    
+    fontSize: 14
   },
   bottomPointerStyle:{
-    width:2,
-    height:20,
-    position:'absolute',
-    bottom:0
+    width: 2,
+    height: 20,
+    position: 'absolute',
+    bottom: 0
   }
 })
 
