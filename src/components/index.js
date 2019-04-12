@@ -12,6 +12,7 @@ import Wtips from './Wtips/Wtips'
 import WtimeSelect from './WtimeSelect/WtimeSelect'
 import Wcategory from './Wcategory/Wcategory'
 import Wswitch from './Wswitch/Wswitch'
+import Whelp from './Whelp/Whelp'
 
 export {
   Wcard,
@@ -26,6 +27,6 @@ export {
   Wtips,
   WtimeSelect,
   Wcategory,
-  Wswitch
-
+  Wswitch,
+  Whelp
 }

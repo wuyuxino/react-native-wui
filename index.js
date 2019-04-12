@@ -13,7 +13,8 @@ import {
   Wtips,
   WtimeSelect,
   Wcategory,
-  Wswitch
+  Wswitch,
+  Whelp
 } from './src/components/index'
 // methods
 import {
@@ -40,6 +41,7 @@ export {
   WtimeSelect,
   Wcategory,
   Wswitch,
+  Whelp,
   // methods
   isIphoneX,
   getStatusBarHeight,
