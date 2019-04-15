@@ -109,7 +109,9 @@ const Warticle = props => {
                   styles.userTextStyle,
                   userTextStyle
                 ]
-              }>{userText&&userText}</Text>
+              }>
+              {userText&&userText}
+            </Text>
             <View
               style={
                 [
@@ -125,7 +127,9 @@ const Warticle = props => {
                     styles.tagTextStyle,
                     tagTextStyle
                   ]
-                }>{tagText}</Text>
+                }>
+                {tagText}
+              </Text>
             </View>
           </View>
           <Text 
@@ -135,7 +139,9 @@ const Warticle = props => {
                 styles.briefTextStyle,
                 briefTextStyle
               ]
-            }>{briefText}</Text>
+            }>
+            {briefText}
+          </Text>
         </View>
       </View>
       <TouchableHighlight
@@ -182,6 +188,7 @@ const Warticle = props => {
           imgDate.map((i,n)=>{
             return(
               <View
+                key={n}
                 style={
                   [
                     styles.imgItemStyle,

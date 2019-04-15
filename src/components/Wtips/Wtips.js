@@ -99,7 +99,9 @@ class Wtips extends Component {
                 styles.tipsTextStyle,
                 tipsTextStyle
               ]
-            }>{tipsText}</Text>
+            }>
+            {tipsText}
+          </Text>
         </View>
       </View>
     )

@@ -103,6 +103,7 @@ class WtimeSelect extends Component{
             timeData.map((item,index)=>{
               return(
                 <View
+                  key={index}
                   style={
                     [
                       styles.itemStyle,
@@ -128,7 +129,9 @@ class WtimeSelect extends Component{
                         },
                         timeTextStyle
                       ]
-                    }>{item}</Text>
+                    }>
+                    {item}
+                  </Text>
                   <View
                     style={
                       [

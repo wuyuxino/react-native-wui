@@ -67,7 +67,9 @@ const Wheader = props => {
             styles.textStyle,
             textStyle
           ]
-        }>{textContent}</Text>
+        }>
+        {textContent}
+      </Text>
       <TouchableHighlight
         underlayColor='#fff'
         onPress={()=>{

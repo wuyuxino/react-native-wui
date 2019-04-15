@@ -108,7 +108,9 @@ class Wloading extends Component{
               styles.loadingTextStyle,
               loadingTextStyle
             ]
-          }>{loadingText}</Text>
+          }>
+          {loadingText}
+        </Text>
       </View>
     )
   }

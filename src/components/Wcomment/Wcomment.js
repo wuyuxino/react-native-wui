@@ -129,7 +129,9 @@ const Wcomment = props => {
                 styles.commentTextStyle,
                 commentTextStyle
               ]
-            }>{commentText}</Text>
+            }>
+            {commentText}
+          </Text>
           <View
             style={
               [
@@ -140,6 +142,7 @@ const Wcomment = props => {
               starNum.map((i,n)=>{
                 return(
                   <Text 
+                    key={n}
                     style={
                       [
                         styles.starStyle,
@@ -148,7 +151,9 @@ const Wcomment = props => {
                           color: scoreNum>n?choiceColor:noChoiceColor
                         }
                       ]
-                    }>★</Text>
+                    }>
+                    ★
+                  </Text>
                 )
               })
             }

@@ -68,7 +68,9 @@ const Wregister = props => {
               styles.titleTextStyle,
               titleTextStyle
             ]
-          }>{titles}</Text>
+          }>
+          {titles}
+        </Text>
       </View>
       <View
         style={
@@ -101,7 +103,11 @@ const Wregister = props => {
                   inputLeftImgStyle
                 ]
               }
-              source={leftImgUrl?leftImgUrl:Images.loginu}
+              source={
+                leftImgUrl?
+                leftImgUrl:
+                Images.loginu
+              }
             />
           </View>
           <TextInput
@@ -141,7 +147,11 @@ const Wregister = props => {
                   inputLeftImgStyle
                 ]
               }
-              source={leftImgUrlE?leftImgUrlE:Images.email}
+              source={
+                leftImgUrlE?
+                leftImgUrlE:
+                Images.email
+              }
             />
           </View>
           <TextInput
@@ -181,7 +191,11 @@ const Wregister = props => {
                   inputLeftImgStyle
                 ]
               }
-              source={leftImgUrlP?leftImgUrlP:Images.password}
+              source={
+                leftImgUrlP?
+                leftImgUrlP:
+                Images.password
+              }
             />
           </View>
           <TextInput
@@ -222,7 +236,11 @@ const Wregister = props => {
                   inputLeftImgStyle
                 ]
               }
-              source={leftImgUrlT?leftImgUrlT:Images.phone}
+              source={
+                leftImgUrlT?
+                leftImgUrlT:
+                Images.phone
+              }
             />
           </View>
           <TextInput
@@ -255,7 +273,9 @@ const Wregister = props => {
                 styles.submitTextStyle,
                 submitTextStyle
               ]
-            }>{submitText}</Text>
+            }>
+            {submitText}
+          </Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity
@@ -275,7 +295,9 @@ const Wregister = props => {
               styles.bottomTextStyle,
               bottomTextStyle
             ]
-          }>{bottomText}</Text>
+          }>
+          {bottomText}
+        </Text>
       </TouchableOpacity>
     </View>
   )

@@ -72,6 +72,7 @@ class Wtab extends Component{
               tabList.map((i,n)=>{
                 return(
                   <TouchableHighlight
+                    key={n}
                     underlayColor="#FFF"
                     onPress={()=>{
                       this.sliderTab(width*(n/tabList.length))

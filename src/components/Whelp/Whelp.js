@@ -3,21 +3,15 @@ import PropTypes from 'prop-types'
 import {
   View,
   Text,
-  Image,
-  Alert,
   PixelRatio,
   Dimensions,
-  StyleSheet,
-  TouchableHighlight
+  StyleSheet
 } from 'react-native'
 
 import {
-  basicLayout,
-  themeColor
+  basicLayout
 } from '../config/index'
 
-const { width } = Dimensions.get('window')
- 
 const Whelp = props => {
   const {
     containerStyle,
@@ -65,6 +59,7 @@ const Whelp = props => {
           mapData.map((item,index)=>{
             return(
               <Text
+                key={index}
                 style={
                   [
                     styles.mapTextStyle,

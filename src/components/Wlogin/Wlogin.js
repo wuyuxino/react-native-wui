@@ -23,10 +23,14 @@ const Wlogin = props => {
     inputContainerStyle,
     leftImgStyle,
     imgStyle,
-    imgUrl,
+    imgUrlTop,
+    imgUrlBottom,
+    localImgUrlTop,
+    localImgUrlBottom,
     inputStyle,
     bgUriStyle,
     bgUrl,
+    localBgUrl,
     submitStyle,
     submitText,
     submitTextStyle,
@@ -39,6 +43,7 @@ const Wlogin = props => {
     bottomTextStyle,
     logoStyle,
     logoUrl,
+    localLogoUrl,
     userInputText,
     passInputtext,
     submitFunc,
@@ -67,7 +72,10 @@ const Wlogin = props => {
             bgUriStyle
           ]
         }
-        source={{uri:bgUrl?bgUrl:''}}
+        source={
+          localBgUrl?
+          localBgUrl:
+          {uri:bgUrl?bgUrl:''}}
       />
       <Image
         resizeMode='cover'
@@ -77,7 +85,11 @@ const Wlogin = props => {
             logoStyle
           ]
         }
-        source={{uri:logoUrl?logoUrl:''}}/>
+        source={
+          localLogoUrl?
+          localLogoUrl:
+          {uri:logoUrl?logoUrl:''}}
+      />
       <View
         style={
           [
@@ -91,7 +103,9 @@ const Wlogin = props => {
               styles.logoTitleStyles,
               logoTitleStyles
             ]
-          }>{logoTitle&&logoTitle}</Text>
+          }>
+          {logoTitle&&logoTitle}
+        </Text>
       </View>
       <View 
         style={
@@ -125,7 +139,13 @@ const Wlogin = props => {
                   imgStyle
                 ]
               }
-              source={imgUrl?{uri:imgUrl}:Images.loginu}
+              source={
+                localImgUrlTop?
+                localImgUrlTop:
+                imgUrlTop?
+                {uri:imgUrlTop}:
+                Images.loginu
+              }
             />
           </View>
           <TextInput
@@ -165,7 +185,13 @@ const Wlogin = props => {
                   imgStyle
                 ]
               }
-              source={imgUrl?{uri:imgUrl}:Images.password}
+              source={
+                localImgUrlBottom?
+                localImgUrlBottom:
+                imgUrlBottom?
+                {uri:imgUrlBottom}:
+                Images.password
+              }
             />
           </View>
           <TextInput
@@ -221,7 +247,9 @@ const Wlogin = props => {
                   styles.leftTextStyle,
                   leftTextStyle
                 ]
-              }>{leftContentText}</Text>
+              }>
+              {leftContentText}
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={()=>{
@@ -234,7 +262,9 @@ const Wlogin = props => {
                   styles.rightTextStyle,
                   rightTextStyle
                 ]
-              }>{rightContentText}</Text>
+              }>
+              {rightContentText}
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -255,7 +285,9 @@ const Wlogin = props => {
               styles.bottomTextStyle,
               bottomTextStyle
             ]
-          }>{bottomText}</Text>
+          }>
+          {bottomText}
+        </Text>
       </TouchableOpacity>
     </View>
   )
@@ -359,7 +391,11 @@ Wlogin.PropTypes = {
   inputContainerStyle: PropTypes.object,
   leftImgStyle: PropTypes.object,
   imgStyle: PropTypes.object,
-  imgUrl: PropTypes.string,
+  localImgUrlBottom: PropTypes.string,
+  localImgUrlTop: PropTypes.string,
+  imgUrlBottom: PropTypes.string,
+  imgUrlTop: PropTypes.string,
+  localBgUrl: PropTypes.string,
   inputStyle: PropTypes.object,
   bgUriStyle: PropTypes.object,
   bgUrl:PropTypes.string,
@@ -373,6 +409,7 @@ Wlogin.PropTypes = {
   bottomText: PropTypes.string || PropTypes.number,
   logoStyle: PropTypes.object,
   logoUrl: PropTypes.string,
+  localLogoUrl: PropTypes.string,
   userInputText: PropTypes.func,
   passInputtext: PropTypes.func,
   leftFunc: PropTypes.func,
