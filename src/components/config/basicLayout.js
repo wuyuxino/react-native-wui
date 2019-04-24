@@ -29,6 +29,11 @@ const layout = {
     alignItems: 'center',
     justifyContent: 'flex-start',
     flexWrap: 'wrap'
+  },
+  dateCenter:{
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   }
 }
 

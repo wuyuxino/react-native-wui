@@ -1,4 +1,5 @@
 import { isIphoneX } from './IphoneX/IphoneX'
+import Connect from './Connect/Connect'
 import { 
   getStatusBarHeight, 
   scaleSizeH, 
@@ -13,5 +14,6 @@ export {
   scaleSizeH,
   scaleSizeW,
   fontscale,
-  setSpText
+  setSpText,
+  Connect
 }

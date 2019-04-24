@@ -13,7 +13,7 @@ import WtimeSelect from './WtimeSelect/WtimeSelect'
 import Wcategory from './Wcategory/Wcategory'
 import Wswitch from './Wswitch/Wswitch'
 import Whelp from './Whelp/Whelp'
-
+import Wdate from './Wdate/Wdate'
 export {
   Wcard,
   Wheader,
@@ -28,5 +28,6 @@ export {
   WtimeSelect,
   Wcategory,
   Wswitch,
-  Whelp
+  Whelp,
+  Wdate
 }

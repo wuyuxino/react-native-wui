@@ -14,7 +14,8 @@ import {
   WtimeSelect,
   Wcategory,
   Wswitch,
-  Whelp
+  Whelp,
+  Wdate
 } from './src/components/index'
 // methods
 import {
@@ -23,7 +24,8 @@ import {
   scaleSizeH,
   scaleSizeW,
   fontscale,
-  setSpText
+  setSpText,
+  Connect
 } from './src/methods/index'
 
 export {
@@ -42,12 +44,14 @@ export {
   Wcategory,
   Wswitch,
   Whelp,
+  Wdate,
   // methods
   isIphoneX,
   getStatusBarHeight,
   scaleSizeH,
   scaleSizeW,
   fontscale,
-  setSpText
+  setSpText,
+  Connect
 
 }
