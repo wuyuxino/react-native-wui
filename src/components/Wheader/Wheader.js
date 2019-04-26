@@ -39,7 +39,7 @@ const Wheader = props => {
       }>
       <TouchableHighlight
         activeOpacity={1}
-        underlayColor='#fff'
+        underlayColor='rgba(0,0,0,0)'
         onPress={()=>{
           leftClick()
         }}>
@@ -73,7 +73,7 @@ const Wheader = props => {
       </Text>
       <TouchableHighlight
         activeOpacity={1}
-        underlayColor='#fff'
+        underlayColor='rgba(0,0,0,0)'
         onPress={()=>{
           rightClick()
         }}>

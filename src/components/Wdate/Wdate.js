@@ -4,8 +4,6 @@ import {
   View,
   Text,
   Image,
-  PixelRatio,
-  Dimensions,
   StyleSheet,
   TouchableOpacity
 } from 'react-native'
