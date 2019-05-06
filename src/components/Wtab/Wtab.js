@@ -30,7 +30,8 @@ class Wtab extends Component{
     itemStyle: PropTypes.object,
     tabList: PropTypes.array,
     clickTab: PropTypes.func,
-    sliderStyle: PropTypes.object
+    sliderStyle: PropTypes.object,
+    tabWidth: PropTypes.number
 
   }
   
@@ -54,7 +55,15 @@ class Wtab extends Component{
   }
 
   render(){
-    const { type, containerStyle, itemStyle, tabList, clickTab, sliderStyle } = this.props
+    const { 
+      type, 
+      containerStyle, 
+      itemStyle, 
+      tabList, 
+      clickTab, 
+      sliderStyle, 
+      tabWidth 
+    } = this.props
     const { sliderLeft } = this.state
     return(
       <View>
@@ -75,7 +84,7 @@ class Wtab extends Component{
                     key={n}
                     underlayColor="#FFF"
                     onPress={()=>{
-                      this.sliderTab(width*(n/tabList.length))
+                      this.sliderTab((tabWidth?tabWidth:width)*(n/tabList.length))
                       clickTab(n)
                     }}
                     style={
