@@ -34,6 +34,11 @@ const layout = {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center'
+  },
+  centerend:{
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
   }
 }
 

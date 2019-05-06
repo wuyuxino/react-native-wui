@@ -14,6 +14,7 @@ import Wcategory from './Wcategory/Wcategory'
 import Wswitch from './Wswitch/Wswitch'
 import Whelp from './Whelp/Whelp'
 import Wdate from './Wdate/Wdate'
+import WimageCard from './WimageCard/WimageCard'
 export {
   Wcard,
   Wheader,
@@ -29,5 +30,6 @@ export {
   Wcategory,
   Wswitch,
   Whelp,
-  Wdate
+  Wdate,
+  WimageCard
 }

@@ -20,7 +20,8 @@ class Wtab extends Component{
   constructor(props){
     super(props)
     this.state={
-      sliderLeft: new Animated.Value(0)
+      sliderLeft: new Animated.Value(0),
+      currentTab: 0
     }
   }
 
@@ -31,8 +32,9 @@ class Wtab extends Component{
     tabList: PropTypes.array,
     clickTab: PropTypes.func,
     sliderStyle: PropTypes.object,
-    tabWidth: PropTypes.number
-
+    tabWidth: PropTypes.number,
+    selectTextStyle: PropTypes.object,
+    noSelectTextStyle: PropTypes.object
   }
   
   static defaultProps = {
@@ -62,9 +64,11 @@ class Wtab extends Component{
       tabList, 
       clickTab, 
       sliderStyle, 
-      tabWidth 
+      tabWidth,
+      selectTextStyle,
+      noSelectTextStyle
     } = this.props
-    const { sliderLeft } = this.state
+    const { sliderLeft,currentTab } = this.state
     return(
       <View>
         {
@@ -84,6 +88,7 @@ class Wtab extends Component{
                     key={n}
                     underlayColor="#FFF"
                     onPress={()=>{
+                      this.setState({currentTab:n})
                       this.sliderTab((tabWidth?tabWidth:width)*(n/tabList.length))
                       clickTab(n)
                     }}
@@ -97,7 +102,26 @@ class Wtab extends Component{
                         itemStyle
                       ]
                     }>
-                    <Text>{i}</Text>
+                    <Text
+                      style={
+                        [
+                          n===currentTab
+                          ?
+                            selectTextStyle
+                            ?
+                            selectTextStyle
+                            :
+                            styles.selectTextStyle
+                          :
+                            noSelectTextStyle
+                            ?
+                            noSelectTextStyle
+                            :
+                            styles.noSelectTextStyle
+                        ]
+                      }>
+                      {i}
+                    </Text>
                   </TouchableHighlight>
                 )
               })
@@ -137,6 +161,16 @@ const styles = StyleSheet.create({
   },
   itemStyle:{
     height: '100%'
+  },
+  selectTextStyle: {
+    letterSpacing: 1,
+    fontSize: 16,
+    color: '#FD9351'
+  },
+  noSelectTextStyle: {
+    letterSpacing: 1,
+    fontSize: 16,
+    color: '#D1D1D1'
   }
 })
 

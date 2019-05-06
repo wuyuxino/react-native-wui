@@ -15,7 +15,8 @@ import {
   Wcategory,
   Wswitch,
   Whelp,
-  Wdate
+  Wdate,
+  WimageCard
 } from './src/components/index'
 // methods
 import {
@@ -45,6 +46,7 @@ export {
   Wswitch,
   Whelp,
   Wdate,
+  WimageCard,
   // methods
   isIphoneX,
   getStatusBarHeight,
