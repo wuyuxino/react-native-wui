@@ -16,7 +16,8 @@ import {
   Wswitch,
   Whelp,
   Wdate,
-  WimageCard
+  WimageCard,
+  Wgradual
 } from './src/components/index'
 // methods
 import {
@@ -26,7 +27,13 @@ import {
   scaleSizeW,
   fontscale,
   setSpText,
-  Connect
+  Connect,
+  parseRegister,
+  parseLogin,
+  parseDataFormate,
+  parseGetData,
+  parseSearch,
+  parseGetRelationData
 } from './src/methods/index'
 
 export {
@@ -47,6 +54,7 @@ export {
   Whelp,
   Wdate,
   WimageCard,
+  Wgradual,
   // methods
   isIphoneX,
   getStatusBarHeight,
@@ -54,6 +62,11 @@ export {
   scaleSizeW,
   fontscale,
   setSpText,
-  Connect
-
+  Connect,
+  parseRegister,
+  parseLogin,
+  parseDataFormate,
+  parseGetData,
+  parseSearch,
+  parseGetRelationData
 }

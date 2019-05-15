@@ -7,6 +7,14 @@ import {
   fontscale,
   setSpText
 } from './Adaptation/Adaptation'
+import {
+  parseRegister,
+  parseLogin,
+  parseDataFormate,
+  parseGetData,
+  parseSearch,
+  parseGetRelationData
+} from './ParseServer/ParseServer'
 
 export {
   isIphoneX,
@@ -15,5 +23,11 @@ export {
   scaleSizeW,
   fontscale,
   setSpText,
-  Connect
+  Connect,
+  parseRegister,
+  parseLogin,
+  parseDataFormate,
+  parseGetData,
+  parseSearch,
+  parseGetRelationData
 }
