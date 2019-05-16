@@ -78,15 +78,54 @@ function parseDataFormate(a){
  * @param {传入的Parse对象} a 
  * @param {需要查询的class类名} b 
  * @param {查询成功后的回调函数} c 
+ * @param {查询的字段中是否包含Pointer字段，包含的话查询字段名称} d 
  */
 
-function parseGetData(a,b,c){
+function parseGetData(a,b,c,d=''){
   let queryData = a.Object.extend(b)
   let queryDatas = new a.Query(queryData)
+  if(d===''){}else{
+    queryDatas.include(d)
+  }
   queryDatas.find().then(req=>{
     c(req)
   }).catch(err=>{
     c(err)
+  })
+}
+
+/**
+ * 用户增加当前class的数据
+ * @param {需要传递的Parse对象} a 
+ * @param {当前想要增加数据的class类名} b 
+ * @param {当前需要设置字段和改字段需要设置的值} c 
+ * @param {设置成功或失败后的回调函数} d 
+ */
+
+function parseAddData(a,b,c,d){
+  const addDatas = a.Object.extend(b)
+  const addData = new addDatas()
+  for(let i in c){
+    addData.set(i,c[i])
+  }
+  addData.save().then(req=>{
+    d(req)
+  }).catch(err=>{
+    d(req)
+  })
+}
+
+/**
+ * 从制定的class类里面删除一个对象
+ * @param {需要删除的用户数据对象，即class类里面的对象} a 
+ * @param {删除成功或者失败后的回调函数} b 
+ */
+
+function parseRemoveData(a,b){
+  a.destroy().then(req=>{
+    b(req)
+  }).catch(err=>{
+    b(err)
   })
 }
 
@@ -137,12 +176,32 @@ function parseGetRelationData(a,b,c){
     })
 }
 
+/**
+ * 存储图片
+ * @param {需要传入的Parse对象} a 
+ * @param {存储图片的字段名称 String} b 
+ * @param {需要传入的base64图片} c 
+ * @param {图片存储成功后的回调函数} d 
+ */
+
+function parseFileSave(a,b,c,d){
+  let file = new a.File(b, { base64: c })
+  file.save().then(req=>{
+    d(req)
+  }).catch(err=>{
+    d(req)
+  })
+}
+
 export {
   parseRegister,
   parseLogin,
   parseDataFormate,
   parseGetData,
+  parseAddData,
+  parseRemoveData,
   parseSearch,
-  parseGetRelationData
+  parseGetRelationData,
+  parseFileSave
 
 }

@@ -32,8 +32,11 @@ import {
   parseLogin,
   parseDataFormate,
   parseGetData,
+  parseAddData,
+  parseRemoveData,
   parseSearch,
-  parseGetRelationData
+  parseGetRelationData,
+  parseFileSave
 } from './src/methods/index'
 
 export {
@@ -67,6 +70,9 @@ export {
   parseLogin,
   parseDataFormate,
   parseGetData,
+  parseAddData,
+  parseRemoveData,
   parseSearch,
-  parseGetRelationData
+  parseGetRelationData,
+  parseFileSave
 }

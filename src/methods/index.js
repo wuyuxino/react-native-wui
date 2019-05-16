@@ -12,8 +12,11 @@ import {
   parseLogin,
   parseDataFormate,
   parseGetData,
+  parseAddData,
+  parseRemoveData,
   parseSearch,
-  parseGetRelationData
+  parseGetRelationData,
+  parseFileSave
 } from './ParseServer/ParseServer'
 
 export {
@@ -28,6 +31,9 @@ export {
   parseLogin,
   parseDataFormate,
   parseGetData,
+  parseAddData,
+  parseRemoveData,
   parseSearch,
-  parseGetRelationData
+  parseGetRelationData,
+  parseFileSave
 }
