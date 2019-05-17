@@ -1,5 +1,6 @@
 import { isIphoneX } from './IphoneX/IphoneX'
 import Connect from './Connect/Connect'
+import timeBeauty from './TimeBeauty/TimeBeauty'
 import { 
   getStatusBarHeight, 
   scaleSizeH, 
@@ -35,5 +36,6 @@ export {
   parseRemoveData,
   parseSearch,
   parseGetRelationData,
-  parseFileSave
+  parseFileSave,
+  timeBeauty
 }

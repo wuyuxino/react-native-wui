@@ -4,7 +4,6 @@ import {
   View,
   Text,
   PixelRatio,
-  Dimensions,
   StyleSheet
 } from 'react-native'
 

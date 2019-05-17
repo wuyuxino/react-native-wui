@@ -36,7 +36,8 @@ import {
   parseRemoveData,
   parseSearch,
   parseGetRelationData,
-  parseFileSave
+  parseFileSave,
+  timeBeauty
 } from './src/methods/index'
 
 export {
@@ -74,5 +75,6 @@ export {
   parseRemoveData,
   parseSearch,
   parseGetRelationData,
-  parseFileSave
+  parseFileSave,
+  timeBeauty
 }

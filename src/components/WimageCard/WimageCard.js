@@ -3,18 +3,15 @@ import PropTypes from 'prop-types'
 import {
   View,
   Text,
-  Alert,
   Image,
-  TextInput,
   Dimensions,
   StyleSheet,
   TouchableOpacity
 } from 'react-native'
 
 import basicLayout from '../config/basicLayout'
-import Images from '../../resources/index'
 
-const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 
 const WimageCard = props => {
   const {
