@@ -37,6 +37,9 @@ import {
   parseSearch,
   parseGetRelationData,
   parseFileSave,
+  parseRelationAdd,
+  parseRelationRemove,
+  parsePagingQuery,
   timeBeauty
 } from './src/methods/index'
 
@@ -76,5 +79,8 @@ export {
   parseSearch,
   parseGetRelationData,
   parseFileSave,
+  parseRelationAdd,
+  parseRelationRemove,
+  parsePagingQuery,
   timeBeauty
 }

@@ -17,7 +17,10 @@ import {
   parseRemoveData,
   parseSearch,
   parseGetRelationData,
-  parseFileSave
+  parseFileSave,
+  parseRelationAdd,
+  parseRelationRemove,
+  parsePagingQuery
 } from './ParseServer/ParseServer'
 
 export {
@@ -37,5 +40,8 @@ export {
   parseSearch,
   parseGetRelationData,
   parseFileSave,
+  parseRelationAdd,
+  parseRelationRemove,
+  parsePagingQuery,
   timeBeauty
 }

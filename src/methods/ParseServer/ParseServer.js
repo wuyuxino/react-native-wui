@@ -165,10 +165,16 @@ function parseSearch(a,b,c,d,e=true){
  * @param {需要查询带有relation格式数据的字段} a 
  * @param {relation格式字段的名称} b 
  * @param {查询成功或者失败的回调函数} c 
+ * @param {增加条件查询} d 
  */
 
-function parseGetRelationData(a,b,c){
+function parseGetRelationData(a,b,c,d=''){
     let relationData = a.relation(b)
+    if(d===''){}else{
+      for(let i in d){
+        relationData.query().equalTo(i,d[i])
+      }
+    }
     relationData.query().find().then(req=>{
       c(req)
     }).catch(err=>{
@@ -193,6 +199,69 @@ function parseFileSave(a,b,c,d){
   })
 }
 
+/**
+ * Relation格式的数据的增加
+ * @param {带有relation数据结构的对象} a 
+ * @param {带有relation数据结构的对象的字段名称} b 
+ * @param {需要添加的对象，可以是单个对象或者是数组对象} c 
+ * @param {添加成功或失败后的回调函数} d 
+ */
+
+function parseRelationAdd(a,b,c,d){
+  let relation = a.relation(b)
+  relation.add(c)
+  a.save().then(req=>{
+    d(req)
+  }).catch(err=>{
+    d(err)
+  })
+}
+
+/**
+ * Relation格式的数据的删除
+ * @param {带有relation数据结构的对象} a 
+ * @param {带有relation数据结构的对象的字段名称} b 
+ * @param {需要删除的对象，可以是单个对象或者是数组对象} c 
+ * @param {删除成功或失败后的回调函数} d 
+ */
+
+function parseRelationRemove(a,b,c,d){
+  let relation = a.relation(b)
+  relation.remove(c)
+  a.save().then(req=>{
+    d(req)
+  }).catch(err=>{
+    d(err)
+  })
+}
+
+/**
+ * Parse分页效果查询，用来做分页
+ * @param {需要传入的Parse对象} a 
+ * @param {需要查询的class类名} b 
+ * @param {跳过的条数} c 
+ * @param {限制输出的条数} d 
+ * @param {查询成功或者失败的回调函数} e 
+ * @param {指定返回指定的字段，数组格式，里面包含想要查询的字段名称} f 
+ */
+
+function parsePagingQuery(a,b,c,d,e,f=''){
+  let DataList = a.Object.extend(b)
+  let queryData = new a.Query(DataList)
+  if(f===''){}else{
+    for(let i=0;i<f.length;i++){
+      queryData.select(f[i])
+    }
+  }
+  queryData.skip(c)
+  queryData.limit(d)
+  queryData.find().then(req=>{
+    e(req)
+  }).catch(err=>{
+    e(err)
+  })
+}
+
 export {
   parseRegister,
   parseLogin,
@@ -202,6 +271,9 @@ export {
   parseRemoveData,
   parseSearch,
   parseGetRelationData,
-  parseFileSave
+  parseFileSave,
+  parseRelationAdd,
+  parseRelationRemove,
+  parsePagingQuery
 
 }
