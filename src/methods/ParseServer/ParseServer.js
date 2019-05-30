@@ -111,7 +111,7 @@ function parseAddData(a,b,c,d){
   addData.save().then(req=>{
     d(req)
   }).catch(err=>{
-    d(req)
+    d(err)
   })
 }
 
@@ -195,7 +195,7 @@ function parseFileSave(a,b,c,d){
   file.save().then(req=>{
     d(req)
   }).catch(err=>{
-    d(req)
+    d(err)
   })
 }
 
