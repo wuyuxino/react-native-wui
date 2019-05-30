@@ -32,11 +32,17 @@ function parseRegister(a,b,c){
  * @param {当前需要登陆的用户名} b 
  * @param {当前需要登陆的用户密码} c 
  * @param {登陆成功或者失败后的回掉函数} d 
+ * @param {是否对数据进行序列化后在输出，默认为false} e
  */
 
-function parseLogin(a,b,c,d){
+function parseLogin(a,b,c,d,e=false){
   a.User.logIn(b,c).then(req=>{
-    d(req)
+    if(e){
+      let obj = JSON.parse(JSON.stringify(req))
+      obj.id = e.id
+      obj.className = e.className
+    }
+    d(e?obj:req)
   }).catch(err=>{
     d(err)
   })
@@ -100,13 +106,34 @@ function parseGetData(a,b,c,d=''){
  * @param {当前想要增加数据的class类名} b 
  * @param {当前需要设置字段和改字段需要设置的值} c 
  * @param {设置成功或失败后的回调函数} d 
+ * @param {是否设置有关Pointer字段的属性，默认为false} e 
+ * @param {添加改Pointer对象的数组[[f,g,h],[f,g,h]]} f
+ * 数组参数说明
+ * @param {关联字段的Class类名字} f
+ * @param {需要关联对象的ID} g
+ * @param {该Pointer字段在增加数据class类名中的名字} h
+ 
  */
 
-function parseAddData(a,b,c,d){
+/**
+ * Pointer类型数据的传入格式
+ * pointer:[
+ *   { value:'关联的对象', className:'关联Class的类名', name:'该Pointer字段的名字' }
+ * ]
+ */
+
+function parseAddData(a,b,c,d,e=false,f){
   const addDatas = a.Object.extend(b)
   const addData = new addDatas()
   for(let i in c){
     addData.set(i,c[i])
+  }
+  if(e){
+    for(let i=0;i<f.length;i++){
+      let T = Parse.Object.extend(f[i][0])
+      let t = T.createWithoutData(f[i][1])
+      addData.set(f[i][2],t)
+    }
   }
   addData.save().then(req=>{
     d(req)
