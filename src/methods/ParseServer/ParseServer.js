@@ -130,7 +130,7 @@ function parseAddData(a,b,c,d,e=false,f){
   }
   if(e){
     for(let i=0;i<f.length;i++){
-      let T = Parse.Object.extend(f[i][0])
+      let T = a.Object.extend(f[i][0])
       let t = T.createWithoutData(f[i][1])
       addData.set(f[i][2],t)
     }
