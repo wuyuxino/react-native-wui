@@ -59,8 +59,8 @@ let fontScale = PixelRatio.getFontScale();
 let pixelRatio = PixelRatio.get();
 
 // 设计稿的宽度和高度
-const designWidth = 1242.0
-const designHeight = 2208.0
+const designWidth = 375.0
+const designHeight = 812.0
 
 // 根据dp获取屏幕的px
 let screenPxW = PixelRatio.getPixelSizeForLayoutSize(screenW);
