@@ -13,6 +13,8 @@ const Images = {
   load2:require('./images/loading2.png'),
   load3:require('./images/loading3.png'),
   load4:require('./images/loading4.png'),
+  down:require('./images/down.png'),
+  up:require('./images/up.png')
 
 
   

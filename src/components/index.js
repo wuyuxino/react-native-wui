@@ -16,6 +16,9 @@ import Whelp from './Whelp/Whelp'
 import Wdate from './Wdate/Wdate'
 import WimageCard from './WimageCard/WimageCard'
 import Wgradual from './Wgradual/Wgradual'
+import Wquantity from './Wquantity/Wquantity'
+import Wspinner from './Wspinner/Wspinner'
+
 export {
   Wcard,
   Wheader,
@@ -33,5 +36,7 @@ export {
   Whelp,
   Wdate,
   WimageCard,
-  Wgradual
+  Wgradual,
+  Wquantity,
+  Wspinner
 }
