@@ -14,7 +14,8 @@ const Images = {
   load3:require('./images/loading3.png'),
   load4:require('./images/loading4.png'),
   down:require('./images/down.png'),
-  up:require('./images/up.png')
+  up:require('./images/up.png'),
+  send:require('./images/send.png')
 
 
   

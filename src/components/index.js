@@ -18,6 +18,7 @@ import WimageCard from './WimageCard/WimageCard'
 import Wgradual from './Wgradual/Wgradual'
 import Wquantity from './Wquantity/Wquantity'
 import Wspinner from './Wspinner/Wspinner'
+import Wmessage from './Wmessage/Wmessage'
 
 export {
   Wcard,
@@ -38,5 +39,6 @@ export {
   WimageCard,
   Wgradual,
   Wquantity,
-  Wspinner
+  Wspinner,
+  Wmessage
 }

@@ -19,7 +19,8 @@ import {
   WimageCard,
   Wgradual,
   Wquantity,
-  Wspinner
+  Wspinner,
+  Wmessage
 } from './src/components/index'
 // methods
 import {
@@ -66,6 +67,7 @@ export {
   Wgradual,
   Wquantity,
   Wspinner,
+  Wmessage,
   // methods
   isIphoneX,
   getStatusBarHeight,
