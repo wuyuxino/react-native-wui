@@ -85,19 +85,18 @@ function parseDataFormate(a){
  * @param {需要查询的class类名} b 
  * @param {查询成功后的回调函数} c 
  * @param {查询的字段中是否包含Pointer字段，包含的话查询字段名称} d 
- * @param {多个条件查询} e
- * @param {查询的条件，数组格式展示,[{name:'',value:''}]} f
+ * @param {多个条件查询 [equalTo('type',2),equalTo('name',1)]} e
  */
 
-function parseGetData(a,b,c,d='',e='',f){
+function parseGetData(a,b,c,d='',e=''){
   let queryData = a.Object.extend(b)
   let queryDatas = new a.Query(queryData)
   if(d===''){}else{
     queryDatas.include(d)
   }
   if(e===''){}else{
-    for(let i=0;i<f.length;i++){
-      queryDatas.equalTo(f[i].name.f[i].value)
+    for(let i=0;i<e.length;i++){
+      queryDatas[e[i]]
     }
   }
   queryDatas.find().then(req=>{
