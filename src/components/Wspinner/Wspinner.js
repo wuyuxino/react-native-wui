@@ -99,6 +99,7 @@ class Wspinner extends Component {
           ]
         }>
         <TouchableOpacity
+          activeOpacity={.8}
           onPress={()=>{
             this.setState({showList:!this.state.showList})
           }}

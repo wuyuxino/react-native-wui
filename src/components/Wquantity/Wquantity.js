@@ -13,8 +13,8 @@ import {
 } from '../config/index'
 
 class Wquantity extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
       countNumber:0
     }
@@ -64,12 +64,10 @@ class Wquantity extends Component {
         }>
         <TouchableOpacity
           onPress={()=>{
-            if(Number(countNumber)===0){return}
+            if(countNumber===0){return}
             this.refs.TextInput.blur()
-            this.setState(
-              {countNumber:Number(countNumber)-1},
-              ()=>{currentValue(countNumber-1)}
-            )
+            this.setState({countNumber:countNumber-1})
+            currentValue(countNumber-1)
           }}
           activeOpacity={.8}
           style={
@@ -93,10 +91,8 @@ class Wquantity extends Component {
           ref='TextInput'
           onChangeText={(e)=>{
             if(e==""|| isNaN(e)) return
-            this.setState(
-              {countNumber:Number(e)},
-              ()=>{currentValue(Number(e))}
-            )
+            this.setState({countNumber:Number(e)})
+            currentValue(Number(e))
           }}
           onBlur={()=>{
             this.refs.TextInput.clear()
@@ -104,7 +100,7 @@ class Wquantity extends Component {
           keyboardType={'numeric'}
           value={countNumber}
           placeholderTextColor={'#333'}
-          placeholder={this.state.countNumber}
+          placeholder={(this.state.countNumber).toString()}
           style={
             [
               styles.centerTextStyle,
@@ -115,10 +111,8 @@ class Wquantity extends Component {
         <TouchableOpacity
           onPress={()=>{
             this.refs.TextInput.blur()
-            this.setState(
-              {countNumber:Number(countNumber)+1},
-              ()=>{currentValue(countNumber+1)}
-            )
+            this.setState({countNumber:countNumber+1})
+            currentValue(countNumber+1)
           }}
           activeOpacity={.8}
           style={
