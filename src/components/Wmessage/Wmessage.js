@@ -361,6 +361,7 @@ const styles = StyleSheet.create({
     borderRadius: 15
   },
   leftPopupStyle:{
+    flexDirection: 'row',
     width: width-100,
     position:'relative',
     left: 36,
@@ -383,6 +384,7 @@ const styles = StyleSheet.create({
     lineHeight:22
   },
   rightPopupStyle:{
+    flexDirection: 'row',
     width: width-100,
     position:'relative',
     right: 6,
