@@ -28,12 +28,12 @@ class Wmessage extends Component {
         {
           avatar:'https://i04picsos.sogoucdn.com/17b8b9e823f380ea',
           id:'1234',
-          content:'请问在吗？请问在吗？请问在吗？请问在吗？请问在吗？'
+          content:'您好，请问在吗？'
         },
         {
           avatar:'https://i04picsos.sogoucdn.com/17b8b9e823f380ea',
           id:'1235',
-          content:'您好，在的，请问有什么需要帮助的？您好，在的，请问有什么需要帮助的？'
+          content:'您好，在的，请问有什么需要帮助的？'
         },
         {
           avatar:'https://i04picsos.sogoucdn.com/17b8b9e823f380ea',
