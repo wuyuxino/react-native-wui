@@ -287,7 +287,7 @@ class Wmessage extends Component {
                       sendImgStyle
                     ]
                   }
-                  source={{uri:sendImgUrl}}
+                  source={sendImgUrl}
                 />
                 :
                 <Image
