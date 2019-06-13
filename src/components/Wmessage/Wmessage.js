@@ -122,6 +122,10 @@ class Wmessage extends Component {
           ]
         }>
         <ScrollView 
+          ref='scrollend'
+          onContentSizeChange={()=>{
+            this.refs.scrollend.scrollToEnd({animated:true})
+          }}
           style={
             [
               styles.messageConStyle,
