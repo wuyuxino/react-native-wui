@@ -18,7 +18,7 @@ import {
 
 import Images from '../../resources/index'
 
-const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 
 class Wmessage extends Component {
   constructor(props){
@@ -158,6 +158,7 @@ class Wmessage extends Component {
                     style={
                       [
                         styles.leftPopupStyle,
+                        basicLayout.left,
                         leftPopupStyle
                       ]
                     }>
@@ -193,6 +194,7 @@ class Wmessage extends Component {
                     style={
                       [
                         styles.rightPopupStyle,
+                        basicLayout.rightnr,
                         rightPopupStyle
                       ]
                     }>
@@ -365,7 +367,6 @@ const styles = StyleSheet.create({
     borderRadius: 15
   },
   leftPopupStyle:{
-    flexDirection: 'row',
     width: width-100,
     position:'relative',
     left: 36,
@@ -388,7 +389,6 @@ const styles = StyleSheet.create({
     lineHeight:22
   },
   rightPopupStyle:{
-    flexDirection: 'row',
     width: width-100,
     position:'relative',
     right: 6,
