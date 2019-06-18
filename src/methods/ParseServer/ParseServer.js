@@ -282,7 +282,7 @@ function parseRelationRemove(a,b,c,d){
 function parsePagingQuery(a,b,c,d,e,f,g=''){
   let DataList = a.Object.extend(b)
   let queryData = new a.Query(DataList)
-  if(f===''){}else{
+  if(g===''){}else{
     for(let i=0;i<f.length;i++){
       queryData.select(f[i])
     }
