@@ -85,7 +85,7 @@ function parseDataFormate(a){
  * @param {需要查询的class类名} b 
  * @param {查询成功后的回调函数} c 
  * @param {查询的字段中是否包含Pointer字段，包含的话查询字段名称} d 
- * @param {多个条件查询 [equalTo('type',2),equalTo('name',1)]} e
+ * @param {多个条件查询 [new Parse.Query(Parse.Object.extend('class类名')).equalTo('type',2)]} e
  */
 
 function parseGetData(a,b,c,d='',e=''){
@@ -96,7 +96,7 @@ function parseGetData(a,b,c,d='',e=''){
   }
   if(e===''){}else{
     for(let i=0;i<e.length;i++){
-      queryDatas[e[i]]
+      e[i]
     }
   }
   queryDatas.find().then(req=>{
@@ -275,10 +275,11 @@ function parseRelationRemove(a,b,c,d){
  * @param {跳过的条数} c 
  * @param {限制输出的条数} d 
  * @param {查询成功或者失败的回调函数} e 
- * @param {指定返回指定的字段，数组格式，里面包含想要查询的字段名称} f 
+ * @param {查询的字段中是否包含Pointer字段，包含的话查询字段名称} f 
+ * @param {指定返回指定的字段，数组格式，里面包含想要查询的字段名称} g 
  */
 
-function parsePagingQuery(a,b,c,d,e,f=''){
+function parsePagingQuery(a,b,c,d,e,f,g=''){
   let DataList = a.Object.extend(b)
   let queryData = new a.Query(DataList)
   if(f===''){}else{
@@ -288,6 +289,7 @@ function parsePagingQuery(a,b,c,d,e,f=''){
   }
   queryData.skip(c)
   queryData.limit(d)
+  queryData.include(f)
   queryData.find().then(req=>{
     e(req)
   }).catch(err=>{
