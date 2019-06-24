@@ -20,7 +20,8 @@ import {
   Wgradual,
   Wquantity,
   Wspinner,
-  Wmessage
+  Wmessage,
+  Wcode
 } from './src/components/index'
 // methods
 import {
@@ -68,6 +69,7 @@ export {
   Wquantity,
   Wspinner,
   Wmessage,
+  Wcode,
   // methods
   isIphoneX,
   getStatusBarHeight,

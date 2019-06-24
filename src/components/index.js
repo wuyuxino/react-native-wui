@@ -19,6 +19,7 @@ import Wgradual from './Wgradual/Wgradual'
 import Wquantity from './Wquantity/Wquantity'
 import Wspinner from './Wspinner/Wspinner'
 import Wmessage from './Wmessage/Wmessage'
+import Wcode from './Wcode/Wcode'
 
 export {
   Wcard,
@@ -40,5 +41,6 @@ export {
   Wgradual,
   Wquantity,
   Wspinner,
-  Wmessage
+  Wmessage,
+  Wcode
 }
