@@ -21,7 +21,8 @@ import {
   Wquantity,
   Wspinner,
   Wmessage,
-  Wcode
+  Wcode,
+  Wpsbox
 } from './src/components/index'
 // methods
 import {
@@ -70,6 +71,7 @@ export {
   Wspinner,
   Wmessage,
   Wcode,
+  Wpsbox,
   // methods
   isIphoneX,
   getStatusBarHeight,

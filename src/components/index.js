@@ -20,6 +20,7 @@ import Wquantity from './Wquantity/Wquantity'
 import Wspinner from './Wspinner/Wspinner'
 import Wmessage from './Wmessage/Wmessage'
 import Wcode from './Wcode/Wcode'
+import Wpsbox from './Wpsbox/Wpsbox'
 
 export {
   Wcard,
@@ -42,5 +43,6 @@ export {
   Wquantity,
   Wspinner,
   Wmessage,
-  Wcode
+  Wcode,
+  Wpsbox
 }
