@@ -27,7 +27,9 @@ const Wsearch = props => {
     contentInputFunc,
     searchClick,
     type,
-    typeClick
+    typeClick,
+    logoUrl,
+    searchUrl
   } = props
 
   return(
@@ -89,7 +91,7 @@ const Wsearch = props => {
             <Image
               style={styles.img}
               resizeMode='cover'
-              source={Images.search}
+              source={searchUrl?searchUrl:Images.search}
             />
           </TouchableOpacity>
           :null
@@ -104,7 +106,7 @@ const Wsearch = props => {
                 logoStyle
               ]
             }
-            source={Images.logo}
+            source={logoUrl?logoUrl:Images.logo}
           />
           :null
         }
@@ -161,7 +163,9 @@ Wsearch.PropTypes = {
   contentInputFunc: PropTypes.func,
   searchClick: PropTypes.func,
   type: PropTypes.number,
-  typeClick: PropTypes.func
+  typeClick: PropTypes.func,
+  logoUrl: PropTypes.string,
+  searchUrl: PropTypes.string
 }
 
 Wsearch.defaultProps = {
