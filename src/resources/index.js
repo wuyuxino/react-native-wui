@@ -15,9 +15,9 @@ const Images = {
   load4:require('./images/loading4.png'),
   down:require('./images/down.png'),
   up:require('./images/up.png'),
-  send:require('./images/send.png')
-
-
+  send:require('./images/send.png'),
+  search:require('./images/search.png'),
+  logo:require('./images/logo.png')
   
 }
 

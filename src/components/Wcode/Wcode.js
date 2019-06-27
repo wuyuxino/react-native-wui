@@ -24,12 +24,16 @@ class Wcode extends Component{
     timeTextStyle: PropTypes.object,
     tipsTextStyle: PropTypes.object,
     tipText: PropTypes.string || PropTypes.number,
-    unitText: PropTypes.string
+    unitText: PropTypes.string,
+    clickFunc: PropTypes.func
   }
   
   static defaultProps = {
     tipText: '获取验证码',
-    unitText: 's'
+    unitText: 's',
+    clickFunc: () => {
+      console.log('点击获取验证码后执行的方法')
+    }
   }
 
   sendSMS = (a,b) => {

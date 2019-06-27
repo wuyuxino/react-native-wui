@@ -21,6 +21,7 @@ import Wspinner from './Wspinner/Wspinner'
 import Wmessage from './Wmessage/Wmessage'
 import Wcode from './Wcode/Wcode'
 import Wpsbox from './Wpsbox/Wpsbox'
+import Wsearch from './Wsearch/Wsearch'
 
 export {
   Wcard,
@@ -44,5 +45,6 @@ export {
   Wspinner,
   Wmessage,
   Wcode,
-  Wpsbox
+  Wpsbox,
+  Wsearch
 }
