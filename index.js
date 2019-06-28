@@ -2,6 +2,7 @@
 // components
 import {
   Wcard,
+  Wcardone,
   Wheader,
   Wtitle,
   Wtab,
@@ -52,6 +53,7 @@ import {
 export {
   // components
   Wcard,
+  Wcardone,
   Wheader,
   Wtitle,
   Wtab,

@@ -1,5 +1,6 @@
 // components main js
 import Wcard from './Wcard/Wcard'
+import Wcardone from './Wcardone/Wcardone'
 import Wheader from './Wheader/Wheader'
 import Wtitle from './Wtitle/Wtitle'
 import Wtab from './Wtab/Wtab'
@@ -25,6 +26,7 @@ import Wsearch from './Wsearch/Wsearch'
 
 export {
   Wcard,
+  Wcardone,
   Wheader,
   Wtitle,
   Wtab,

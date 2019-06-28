@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
+  Text,
   View,
   Image,
   TextInput,
@@ -54,9 +55,20 @@ const Wsearch = props => {
             style={
               [
                 styles.inputStyle,
+                basicLayout.left,
                 inputStyle
               ]
             }>
+            <Text
+              style={
+                [
+                  {
+                    color: placeholderColor
+                  }
+                ]
+              }>
+              {placeholderText}
+            </Text>
           </View>
           :
           <TextInput

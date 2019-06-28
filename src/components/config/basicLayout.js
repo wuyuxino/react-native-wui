@@ -39,6 +39,11 @@ const layout = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-end',
+  },
+  centers:{
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 }
 
