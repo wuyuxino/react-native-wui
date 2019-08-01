@@ -111,6 +111,7 @@ const Wregister = props => {
             />
           </View>
           <TextInput
+            autoCapitalize={false}
             onChangeText={(text)=>{
               inputTextUsername(text)
             }}
@@ -155,6 +156,7 @@ const Wregister = props => {
             />
           </View>
           <TextInput
+            autoCapitalize={false}
             onChangeText={(text)=>{
               inputTextEmail(text)
             }}
@@ -244,6 +246,7 @@ const Wregister = props => {
             />
           </View>
           <TextInput
+            autoCapitalize={false}
             onChangeText={(text)=>{
               inputTextPhoneNumber(text)
             }}

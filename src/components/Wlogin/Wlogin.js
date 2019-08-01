@@ -149,6 +149,7 @@ const Wlogin = props => {
             />
           </View>
           <TextInput
+            autoCapitalize={false}
             onChangeText={(text)=>{
               userInputText(text)
             }}

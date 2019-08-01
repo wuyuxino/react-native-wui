@@ -72,6 +72,7 @@ const Wsearch = props => {
           </View>
           :
           <TextInput
+            autoCapitalize={false}
             onChangeText={(e)=>{contentInputFunc(e)}}
             placeholderTextColor={placeholderColor}
             placeholder={placeholderText}
