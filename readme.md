@@ -8,11 +8,11 @@ npm install react-native-wui --save
 npm install prop-types --save
 ```
 
-### 使用方法页面地址链接
+### 使用文档地址链接
 ```html
 http://111.230.57.206
 ```
-### 样式展示
+### 示例
 
 #### 文章页
 ![avatar](./src/resources/demoimg/warticle.png)
@@ -34,7 +34,7 @@ import { Wcomment } from 'react-native-wui'
 
 ```
 
-#### 加载中组件
+#### 加载中
 ![avatar](./src/resources/demoimg/wloading.png)
 
 ``` html
@@ -64,7 +64,7 @@ import { Wregister } from 'react-native-wui'
 
 ```
 
-#### tab切换
+#### Tab
 ![avatar](./src/resources/demoimg/wtab.png)
 
 ``` html
