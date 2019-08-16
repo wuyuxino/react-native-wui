@@ -243,6 +243,7 @@ class Wmessage extends Component {
               ]
             }>
             <TextInput
+              autoCapitalize={false}
               ref='TextInput'
               onChangeText={(e)=>{
                 this.setState({sendText:e})

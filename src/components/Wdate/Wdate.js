@@ -53,7 +53,8 @@ class Wdate extends Component{
       if(year%400===0){
         if(currentMonth===1||currentMonth===3||
           currentMonth===5||currentMonth===7||
-          currentMonth===9||currentMonth===12){
+          currentMonth===8||
+          currentMonth===10||currentMonth===12){
           currentMonthCount = 31
         }else if(currentMonth===2){
           currentMonthCount = 29
@@ -63,7 +64,8 @@ class Wdate extends Component{
       }else{
         if(currentMonth===1||currentMonth===3||
           currentMonth===5||currentMonth===7||
-          currentMonth===9||currentMonth===12){
+          currentMonth===8||
+          currentMonth===10||currentMonth===12){
           currentMonthCount = 31
         }else if(currentMonth===2){
           currentMonthCount = 28
@@ -75,7 +77,8 @@ class Wdate extends Component{
       if(year%4===0){
         if(currentMonth===1||currentMonth===3||
           currentMonth===5||currentMonth===7||
-          currentMonth===9||currentMonth===12){
+          currentMonth===8||
+          currentMonth===10||currentMonth===12){
           currentMonthCount = 31
         }else if(currentMonth===2){
           currentMonthCount = 29
@@ -85,7 +88,8 @@ class Wdate extends Component{
       }else{
         if(currentMonth===1||currentMonth===3||
           currentMonth===5||currentMonth===7||
-          currentMonth===9||currentMonth===12){
+          currentMonth===8||
+          currentMonth===10||currentMonth===12){
           currentMonthCount = 31
         }else if(currentMonth===2){
           currentMonthCount = 28
