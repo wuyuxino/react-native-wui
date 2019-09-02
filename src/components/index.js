@@ -23,6 +23,7 @@ import Wmessage from './Wmessage/Wmessage'
 import Wcode from './Wcode/Wcode'
 import Wpsbox from './Wpsbox/Wpsbox'
 import Wsearch from './Wsearch/Wsearch'
+import WtopTitle from './WtopTitle/WtopTitle'
 
 export {
   Wcard,
@@ -48,5 +49,6 @@ export {
   Wmessage,
   Wcode,
   Wpsbox,
-  Wsearch
+  Wsearch,
+  WtopTitle
 }
