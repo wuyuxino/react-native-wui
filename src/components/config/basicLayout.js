@@ -24,6 +24,16 @@ const layout = {
     justifyContent: 'center',
     alignItems: 'center'
   },
+  top:{
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center'
+  },
+  bottom:{
+    flexDirection: 'column',
+    justifyContent: 'felx-end',
+    alignItems: 'center'
+  },
   imgcon:{
     flexDirection: 'row',
     alignItems: 'center',

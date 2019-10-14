@@ -26,7 +26,10 @@ class Wtips extends Component {
     tipsTextStyle: PropTypes.object,
     textConStyle: PropTypes.object,
     time: PropTypes.number,
-    hide: PropTypes.object
+    hide: PropTypes.object,
+    tipPosition: PropTypes.string,
+    top: PropTypes.number,
+    bottom: PropTypes.number
   }
   
   static defaultProps = {
@@ -35,7 +38,10 @@ class Wtips extends Component {
       zIndex: -3000,
       height: 0,
       overflow: 'hidden'
-    }
+    },
+    tipPosition: 'center',
+    top: 0,
+    bottom: 0
   }
 
   static show = (message,time,func) => {
@@ -73,16 +79,32 @@ class Wtips extends Component {
       tipsText,
       tipsTextStyle,
       textConStyle,
-      hide
+      hide,
+      tipPosition,
+      top,
+      bottom
     } = this.props
     return(
       <View
         style={
           [
             styles.containerStyle,
+            tipPosition ==='top'? 
+            basicLayout.top:
+            tipPosition ==='bottom'? 
+            basicLayout.bottom:
             basicLayout.center,
             containerStyle,
-            hide
+            hide,
+            tipPosition ==='top'? 
+            {
+              marginTop:top
+            }:
+            tipPosition ==='bottom'? 
+            {
+              marginBottom:bottom
+            }:
+            null
           ]
         }>
         <View
