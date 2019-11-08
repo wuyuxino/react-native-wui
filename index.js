@@ -25,7 +25,8 @@ import {
   Wcode,
   Wpsbox,
   Wsearch,
-  WtopTitle
+  WtopTitle,
+  Wdatepicker
 } from './src/components/index'
 // methods
 import {
@@ -78,6 +79,7 @@ export {
   Wpsbox,
   Wsearch,
   WtopTitle,
+  Wdatepicker,
   // methods
   isIphoneX,
   getStatusBarHeight,
