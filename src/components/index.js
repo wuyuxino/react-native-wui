@@ -25,6 +25,7 @@ import Wpsbox from './Wpsbox/Wpsbox'
 import Wsearch from './Wsearch/Wsearch'
 import WtopTitle from './WtopTitle/WtopTitle'
 import Wdatepicker from './Wdatepicker/Wdatepicker'
+import WverificationCode from './WverificationCode/WverificationCode'
 
 export {
   Wcard,
@@ -52,5 +53,6 @@ export {
   Wpsbox,
   Wsearch,
   WtopTitle,
-  Wdatepicker
+  Wdatepicker,
+  WverificationCode
 }

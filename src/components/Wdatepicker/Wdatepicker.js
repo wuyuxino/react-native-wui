@@ -6,14 +6,12 @@ import {
   Modal,
   Picker,
   StyleSheet,
-  TouchableOpacity,
-
+  TouchableOpacity
 } from 'react-native'
 
 import {
   basicLayout
 } from '../config/index'
-import Images from '../../resources/index'
  
 class Wdatepicker extends Component{
   constructor(props){
@@ -331,7 +329,6 @@ class Wdatepicker extends Component{
     )
   }
 }
-
 
 const styles = StyleSheet.create({
   containerStyle:{
