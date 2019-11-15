@@ -1,75 +1,39 @@
 # react-native-wui
+
+### 开始使用
 ```html
 npm install react-native-wui --save
 ```
 
-### 需要安装的依赖包
-```html
-npm install prop-types --save
+### 组件示例
+
+#### 时间选择组件
+![avatar](./src/resources/demoimg/wdatepicker.jpg)
+
+
+``` html
+import React from 'react
+import { Wdatepicker } from 'react-native-wui'
+
+class Wui extends React.Component{
+  constructor(){
+    super()
+    this.state={
+
+    }
+  }
+
+  render(){
+    return(
+      <Wdatepicker />
+    )
+  }
+}
+
+export default WdatePicker
 ```
 
-### 使用文档地址链接
+### 文档地址
 ```html
 http://111.230.57.206
-```
-### 示例
-
-#### 文章页
-![avatar](./src/resources/demoimg/warticle.png)
-
-``` html
-import { Warticle } from 'react-native-wui'
-
-<Warticle />
-
-```
-
-#### 评论页
-![avatar](./src/resources/demoimg/wcomment.png)
-
-``` html
-import { Wcomment } from 'react-native-wui'
-
-<Wcomment />
-
-```
-
-#### 加载中
-![avatar](./src/resources/demoimg/wloading.png)
-
-``` html
-import { Wloading } from 'react-native-wui'
-
-<Wloading />
-
-```
-
-#### 登陆界面
-![avatar](./src/resources/demoimg/wlogin.png)
-
-``` html
-import { Wlogin } from 'react-native-wui'
-
-<Wlogin />
-
-```
-
-#### 注册界面
-![avatar](./src/resources/demoimg/wregister.png)
-
-``` html
-import { Wregister } from 'react-native-wui'
-
-<Wregister />
-
-```
-
-#### Tab
-![avatar](./src/resources/demoimg/wtab.png)
-
-``` html
-import { Wtab } from 'react-native-wui'
-
-<Wregister />
-
 ```
