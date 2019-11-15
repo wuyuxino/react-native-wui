@@ -30,7 +30,59 @@ class Wui extends React.Component{
   }
 }
 
-export default WdatePicker
+export default Wui
+```
+
+#### 时间滑块组件
+![avatar](./src/resources/demoimg/datechoice.png)
+
+
+``` html
+import React from 'react
+import { WtimeSelect } from 'react-native-wui'
+
+class Wui extends React.Component{
+  constructor(){
+    super()
+    this.state={
+
+    }
+  }
+
+  render(){
+    return(
+      <WtimeSelect />
+    )
+  }
+}
+
+export default Wui
+```
+
+#### 分类简介组件
+![avatar](./src/resources/demoimg/datechoice.png)
+
+
+``` html
+import React from 'react
+import { Whelp } from 'react-native-wui'
+
+class Wui extends React.Component{
+  constructor(){
+    super()
+    this.state={
+
+    }
+  }
+
+  render(){
+    return(
+      <Whelp />
+    )
+  }
+}
+
+export default Wui
 ```
 
 ### 文档地址

@@ -1,6 +1,6 @@
 {
   "name": "react-native-wui",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Some common components",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,8 @@
     "prop-types": "15.7.2"
   },
   "keywords": [
+    "ui",
+    "ui-react-native",
     "react-native-ui",
     "react-native-wui"
   ],
