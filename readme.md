@@ -60,7 +60,7 @@ export default Wui
 ```
 
 #### 分类简介组件
-![avatar](./src/resources/demoimg/datechoice.png)
+![avatar](./src/resources/demoimg/titlenum.png)
 
 
 ``` html
