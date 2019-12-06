@@ -14,16 +14,16 @@
  * @param {成功或者失败后的回调函数} c 
  */
 
-function parseRegister(a,b,c){
-  let user = a
-  for(let i in b){
-    user.set(i,b[i])
-  }
-  user.signUp().then(req=>{
-    c(req)
-  }).catch(err=>{
-    c(err)
-  })
+function parseRegister(a, b, c) {
+	let user = a
+	for (let i in b) {
+		user.set(i, b[i])
+	}
+	user.signUp().then(req => {
+		c(req)
+	}).catch(err => {
+		c(err)
+	})
 }
 
 /**
@@ -35,17 +35,17 @@ function parseRegister(a,b,c){
  * @param {是否对数据进行序列化后在输出，默认为false} e
  */
 
-function parseLogin(a,b,c,d,e=false){
-  a.User.logIn(b,c).then(req=>{
-    if(e){
-      let obj = JSON.parse(JSON.stringify(req))
-      obj.id = e.id
-      obj.className = e.className
-    }
-    d(e?obj:req)
-  }).catch(err=>{
-    d(err)
-  })
+function parseLogin(a, b, c, d, e = false) {
+	a.User.logIn(b, c).then(req => {
+		if (e) {
+			let obj = JSON.parse(JSON.stringify(req))
+			obj.id = e.id
+			obj.className = e.className
+		}
+		d(e ? obj : req)
+	}).catch(err => {
+		d(err)
+	})
 }
 
 /**
@@ -53,30 +53,30 @@ function parseLogin(a,b,c,d,e=false){
  * @param {用户需要格式化的数据，可以是对象或者是数组对象的形式} a 
  */
 
-function parseDataFormate(a){
-  if(a instanceof Array){
-    let backArr = []
-    for(let i=0; i<a.length; i++){
-      let obj = {}
-      obj.className = a[i]['className']
-      obj.id = a[i]['id']
-      obj._objCount = a[i]['_objCount']
-      for(let j in a[i].attributes){
-        obj[j] = a[i].attributes[j]
-      }
-      backArr.push(obj)
-    }
-    return backArr
-  }else{
-    let obj = {}
-    obj.className = a['className']
-    obj.id = a['id']
-    obj._objCount = a['_objCount']
-    for(let j in a.attributes){
-      obj[j] = a.attributes[j]
-    }
-    return obj
-  }
+function parseDataFormate(a) {
+	if (a instanceof Array) {
+		let backArr = []
+		for (let i = 0; i < a.length; i++) {
+			let obj = {}
+			obj.className = a[i]['className']
+			obj.id = a[i]['id']
+			obj._objCount = a[i]['_objCount']
+			for (let j in a[i].attributes) {
+				obj[j] = a[i].attributes[j]
+			}
+			backArr.push(obj)
+		}
+		return backArr
+	} else {
+		let obj = {}
+		obj.className = a['className']
+		obj.id = a['id']
+		obj._objCount = a['_objCount']
+		for (let j in a.attributes) {
+			obj[j] = a.attributes[j]
+		}
+		return obj
+	}
 }
 
 /**
@@ -88,22 +88,22 @@ function parseDataFormate(a){
  * @param {多个条件查询 [new Parse.Query(Parse.Object.extend('class类名')).equalTo('type',2)]} e
  */
 
-function parseGetData(a,b,c,d='',e=''){
-  let queryData = a.Object.extend(b)
-  let queryDatas = new a.Query(queryData)
-  if(d===''){}else{
-    queryDatas.include(d)
-  }
-  if(e===''){}else{
-    for(let i=0;i<e.length;i++){
-      e[i]
-    }
-  }
-  queryDatas.find().then(req=>{
-    c(req)
-  }).catch(err=>{
-    c(err)
-  })
+function parseGetData(a, b, c, d = '', e = '') {
+	let queryData = a.Object.extend(b)
+	let queryDatas = new a.Query(queryData)
+	if (d === '') { } else {
+		queryDatas.include(d)
+	}
+	if (e === '') { } else {
+		for (let i = 0; i < e.length; i++) {
+			e[i]
+		}
+	}
+	queryDatas.find().then(req => {
+		c(req)
+	}).catch(err => {
+		c(err)
+	})
 }
 
 /**
@@ -128,24 +128,24 @@ function parseGetData(a,b,c,d='',e=''){
  * ]
  */
 
-function parseAddData(a,b,c,d,e=false,f){
-  const addDatas = a.Object.extend(b)
-  const addData = new addDatas()
-  for(let i in c){
-    addData.set(i,c[i])
-  }
-  if(e){
-    for(let i=0;i<f.length;i++){
-      let T = a.Object.extend(f[i][0])
-      let t = T.createWithoutData(f[i][1])
-      addData.set(f[i][2],t)
-    }
-  }
-  addData.save().then(req=>{
-    d(req)
-  }).catch(err=>{
-    d(err)
-  })
+function parseAddData(a, b, c, d, e = false, f) {
+	const addDatas = a.Object.extend(b)
+	const addData = new addDatas()
+	for (let i in c) {
+		addData.set(i, c[i])
+	}
+	if (e) {
+		for (let i = 0; i < f.length; i++) {
+			let T = a.Object.extend(f[i][0])
+			let t = T.createWithoutData(f[i][1])
+			addData.set(f[i][2], t)
+		}
+	}
+	addData.save().then(req => {
+		d(req)
+	}).catch(err => {
+		d(err)
+	})
 }
 
 /**
@@ -154,12 +154,12 @@ function parseAddData(a,b,c,d,e=false,f){
  * @param {删除成功或者失败后的回调函数} b 
  */
 
-function parseRemoveData(a,b){
-  a.destroy().then(req=>{
-    b(req)
-  }).catch(err=>{
-    b(err)
-  })
+function parseRemoveData(a, b) {
+	a.destroy().then(req => {
+		b(req)
+	}).catch(err => {
+		b(err)
+	})
 }
 
 /**
@@ -171,26 +171,26 @@ function parseRemoveData(a,b){
  * @param {是否开启模糊匹配 boolean 默认开启} e 
  */
 
-function parseSearch(a,b,c,d,e=true){
-  let searchList = a.Object.extend(b)
-  let list = new a.Query(searchList)
+function parseSearch(a, b, c, d, e = true) {
+	let searchList = a.Object.extend(b)
+	let list = new a.Query(searchList)
 
-  if(e){
-    for(let i in c){
-      list.equalTo(i,{"$regex":c[i]})
-    }
-  }else{
-    for(let i in c){
-      list.equalTo(i,{"$regex":c[i]})
-      list.equalTo(i,c[i])
-    }
-  }
+	if (e) {
+		for (let i in c) {
+			list.equalTo(i, { "$regex": c[i] })
+		}
+	} else {
+		for (let i in c) {
+			list.equalTo(i, { "$regex": c[i] })
+			list.equalTo(i, c[i])
+		}
+	}
 
-  list.find().then(res=>{
-    d(res)
-  }).catch(err=>{
-    d(err)
-  })
+	list.find().then(res => {
+		d(res)
+	}).catch(err => {
+		d(err)
+	})
 }
 
 /**
@@ -201,18 +201,18 @@ function parseSearch(a,b,c,d,e=true){
  * @param {增加条件查询} d 
  */
 
-function parseGetRelationData(a,b,c,d=''){
-    let relationData = a.relation(b)
-    if(d===''){}else{
-      for(let i in d){
-        relationData.query().equalTo(i,d[i])
-      }
-    }
-    relationData.query().find().then(req=>{
-      c(req)
-    }).catch(err=>{
-      c(err)
-    })
+function parseGetRelationData(a, b, c, d = '') {
+	let relationData = a.relation(b)
+	if (d === '') { } else {
+		for (let i in d) {
+			relationData.query().equalTo(i, d[i])
+		}
+	}
+	relationData.query().find().then(req => {
+		c(req)
+	}).catch(err => {
+		c(err)
+	})
 }
 
 /**
@@ -223,13 +223,13 @@ function parseGetRelationData(a,b,c,d=''){
  * @param {图片存储成功后的回调函数} d 
  */
 
-function parseFileSave(a,b,c,d){
-  let file = new a.File(b, { base64: c })
-  file.save().then(req=>{
-    d(req)
-  }).catch(err=>{
-    d(err)
-  })
+function parseFileSave(a, b, c, d) {
+	let file = new a.File(b, { base64: c })
+	file.save().then(req => {
+		d(req)
+	}).catch(err => {
+		d(err)
+	})
 }
 
 /**
@@ -240,14 +240,14 @@ function parseFileSave(a,b,c,d){
  * @param {添加成功或失败后的回调函数} d 
  */
 
-function parseRelationAdd(a,b,c,d){
-  let relation = a.relation(b)
-  relation.add(c)
-  a.save().then(req=>{
-    d(req)
-  }).catch(err=>{
-    d(err)
-  })
+function parseRelationAdd(a, b, c, d) {
+	let relation = a.relation(b)
+	relation.add(c)
+	a.save().then(req => {
+		d(req)
+	}).catch(err => {
+		d(err)
+	})
 }
 
 /**
@@ -258,14 +258,14 @@ function parseRelationAdd(a,b,c,d){
  * @param {删除成功或失败后的回调函数} d 
  */
 
-function parseRelationRemove(a,b,c,d){
-  let relation = a.relation(b)
-  relation.remove(c)
-  a.save().then(req=>{
-    d(req)
-  }).catch(err=>{
-    d(err)
-  })
+function parseRelationRemove(a, b, c, d) {
+	let relation = a.relation(b)
+	relation.remove(c)
+	a.save().then(req => {
+		d(req)
+	}).catch(err => {
+		d(err)
+	})
 }
 
 /**
@@ -279,36 +279,36 @@ function parseRelationRemove(a,b,c,d){
  * @param {指定返回指定的字段，数组格式，里面包含想要查询的字段名称} g 
  */
 
-function parsePagingQuery(a,b,c,d,e,f,g=''){
-  let DataList = a.Object.extend(b)
-  let queryData = new a.Query(DataList)
-  if(g===''){}else{
-    for(let i=0;i<f.length;i++){
-      queryData.select(f[i])
-    }
-  }
-  queryData.skip(c)
-  queryData.limit(d)
-  queryData.include(f)
-  queryData.find().then(req=>{
-    e(req)
-  }).catch(err=>{
-    e(err)
-  })
+function parsePagingQuery(a, b, c, d, e, f, g = '') {
+	let DataList = a.Object.extend(b)
+	let queryData = new a.Query(DataList)
+	if (g === '') { } else {
+		for (let i = 0; i < f.length; i++) {
+			queryData.select(f[i])
+		}
+	}
+	queryData.skip(c)
+	queryData.limit(d)
+	queryData.include(f)
+	queryData.find().then(req => {
+		e(req)
+	}).catch(err => {
+		e(err)
+	})
 }
 
 export {
-  parseRegister,
-  parseLogin,
-  parseDataFormate,
-  parseGetData,
-  parseAddData,
-  parseRemoveData,
-  parseSearch,
-  parseGetRelationData,
-  parseFileSave,
-  parseRelationAdd,
-  parseRelationRemove,
-  parsePagingQuery
+	parseRegister,
+	parseLogin,
+	parseDataFormate,
+	parseGetData,
+	parseAddData,
+	parseRemoveData,
+	parseSearch,
+	parseGetRelationData,
+	parseFileSave,
+	parseRelationAdd,
+	parseRelationRemove,
+	parsePagingQuery
 
 }

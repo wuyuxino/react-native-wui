@@ -1,9 +1,9 @@
 "use strict"
 import {
-  Dimensions, 
-  StatusBar, 
-  Platform, 
-  PixelRatio
+	Dimensions,
+	StatusBar,
+	Platform,
+	PixelRatio
 } from 'react-native'
 
 //手机屏幕的宽度
@@ -30,18 +30,18 @@ export const fontscale = PixelRatio.getFontScale()
  * @returns {boolean}
  */
 export function isIphoneX() {
-    const X_WIDTH = 375;
-    const X_HEIGHT = 812;
-    return Platform.OS == 'ios' && (height == X_HEIGHT && width == X_WIDTH)
+	const X_WIDTH = 375;
+	const X_HEIGHT = 812;
+	return Platform.OS == 'ios' && (height == X_HEIGHT && width == X_WIDTH)
 }
 
 //状态栏的高度
 export function getStatusBarHeight() {
-    if (Platform.OS == 'android') return StatusBar.currentHeight;
-    if (isIphoneX()) {
-        return 44
-    }
-    return 20
+	if (Platform.OS == 'android') return StatusBar.currentHeight;
+	if (isIphoneX()) {
+		return 44
+	}
+	return 20
 }
 
 /**
@@ -72,11 +72,11 @@ let screenPxH = PixelRatio.getPixelSizeForLayoutSize(screenH);
  * @returns {Number} dp
  */
 export function setSpText(size) {
-    var scaleWidth = screenW / designWidth;
-    var scaleHeight = screenH / designHeight;
-    var scale = Math.min(scaleWidth, scaleHeight);
-    size = Math.round(size * scale/fontScale + 0.5);
-    return size;
+	var scaleWidth = screenW / designWidth;
+	var scaleHeight = screenH / designHeight;
+	var scale = Math.min(scaleWidth, scaleHeight);
+	size = Math.round(size * scale / fontScale + 0.5);
+	return size;
 }
 
 /**
@@ -85,9 +85,9 @@ export function setSpText(size) {
  * @returns {Number} dp
  */
 export function scaleSizeH(size) {
-    var scaleHeight = size * screenPxH / designHeight;
-    size = Math.round((scaleHeight / pixelRatio + 0.5));
-    return size;
+	var scaleHeight = size * screenPxH / designHeight;
+	size = Math.round((scaleHeight / pixelRatio + 0.5));
+	return size;
 }
 
 /**
@@ -96,7 +96,7 @@ export function scaleSizeH(size) {
  * @returns {Number} dp
  */
 export function scaleSizeW(size) {
-    var scaleWidth = size * screenPxW / designWidth;
-    size = Math.round((scaleWidth/pixelRatio + 0.5));
-    return size;
+	var scaleWidth = size * screenPxW / designWidth;
+	size = Math.round((scaleWidth / pixelRatio + 0.5));
+	return size;
 }

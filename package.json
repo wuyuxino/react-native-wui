@@ -1,28 +1,28 @@
 {
-  "name": "react-native-wui",
-  "version": "0.4.7",
-  "description": "Some common components",
-  "main": "index.js",
-  "scripts": {
-    "test": "test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wuyuxino/react-native-ui.git"
-  },
-  "dependencies": {
-    "prop-types": "15.7.2"
-  },
-  "keywords": [
-    "ui",
-    "ui-react-native",
-    "react-native-ui",
-    "react-native-wui"
-  ],
-  "author": "wuyx",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/wuyuxino/react-native-ui/issues"
-  },
-  "homepage": "https://github.com/wuyuxino/react-native-ui#readme"
+	"name": "react-native-wui",
+	"version": "0.4.8",
+	"description": "Some common components",
+	"main": "index.js",
+	"scripts": {
+		"test": "test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wuyuxino/react-native-ui.git"
+	},
+	"dependencies": {
+		"prop-types": "15.7.2"
+	},
+	"keywords": [
+		"ui",
+		"ui-react-native",
+		"react-native-ui",
+		"react-native-wui"
+	],
+	"author": "wuyx",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/wuyuxino/react-native-ui/issues"
+	},
+	"homepage": "https://github.com/wuyuxino/react-native-ui#readme"
 }

@@ -3,16 +3,16 @@
  * NetInfo.addEventListener('connectionChange', Connect)
  */
 import {
-  Alert,
-  NetInfo
+	Alert,
+	NetInfo
 } from 'react-native'
 
 function Connect() {
-  NetInfo.getConnectionInfo().then((connectionInfo) => {
-    if(connectionInfo.type==='none'||connectionInfo.type==='unknown'){
-      Alert.alert('network error')
-    }
-  })
+	NetInfo.getConnectionInfo().then((connectionInfo) => {
+		if (connectionInfo.type === 'none' || connectionInfo.type === 'unknown') {
+			Alert.alert('network error')
+		}
+	})
 }
 
 export default Connect
