@@ -28,7 +28,8 @@ import {
 	WtopTitle,
 	Wdatepicker,
 	WverificationCode,
-	Wswiper
+	Wswiper,
+	Wprogress
 } from './src/components/index'
 // methods
 import {
@@ -84,6 +85,7 @@ export {
 	Wdatepicker,
 	WverificationCode,
 	Wswiper,
+	Wprogress,
 	// methods
 	isIphoneX,
 	getStatusBarHeight,

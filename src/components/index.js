@@ -27,6 +27,7 @@ import WtopTitle from './WtopTitle/WtopTitle'
 import Wdatepicker from './Wdatepicker/Wdatepicker'
 import WverificationCode from './WverificationCode/WverificationCode'
 import Wswiper from './Wswiper/Wswiper'
+import Wprogress from './Wprogress/Wprogress'
 
 export {
 	Wcard,
@@ -56,5 +57,6 @@ export {
 	WtopTitle,
 	Wdatepicker,
 	WverificationCode,
-	Wswiper
+	Wswiper,
+	Wprogress
 }
