@@ -34,7 +34,7 @@ export default Wui
 ```
 
 #### 时间滑块组件
-![avatar](./src/resources/demoimg/datechoice.png)
+![datechoice.png](./src/resources/demoimg/datechoice.png)
 
 
 ``` html
