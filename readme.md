@@ -8,7 +8,7 @@ npm install react-native-wui --save
 ### 组件示例
 
 #### 时间选择组件
-![avatar](./src/resources/demoimg/wdatepicker.jpg)
+![image](./src/resources/demoimg/wdatepicker.jpg)
 
 
 ``` html
