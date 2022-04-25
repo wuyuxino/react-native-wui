@@ -87,5 +87,6 @@ export default Wui
 
 ### 文档地址
 ```html
-http://loveit.cool
+https://loveit.cool
+https://loveit.cool/wuidoc
 ```
